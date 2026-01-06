@@ -17,12 +17,12 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "Jane Doe — Musical Theatre Performer & Singer",
+  title: "Taylor Frisina — Musical Theatre Performer & Singer",
   description:
-    "Professional musical theatre performer and singer. Broadway credits include Hamilton, Wicked, and Les Misérables. View performance reels, resume, and booking information.",
-  keywords: ["musical theatre", "performer", "singer", "Broadway", "soprano", "Jane Doe"],
+    "Professional musical theatre performer and singer. View performance reels, resume, and booking information.",
+  keywords: ["musical theatre", "performer", "singer", "mezzo soprano", "Taylor Frisina"],
   openGraph: {
-    title: "Jane Doe — Musical Theatre Performer & Singer",
+    title: "Taylor Frisina — Musical Theatre Performer & Singer",
     description: "Professional musical theatre performer and singer with Broadway and national tour credits",
     type: "website",
   },

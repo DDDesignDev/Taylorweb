@@ -1,7 +1,7 @@
 "use client"
 
-import { useState } from "react"
-import { X } from "lucide-react"
+import { useEffect, useState } from "react"
+import { X, ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const galleryItems = [
@@ -16,6 +16,40 @@ const galleryItems = [
 
 export function MediaGallery() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null)
+
+  // Close on Escape + lock body scroll
+  useEffect(() => {
+    if (selectedImage === null) return
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelectedImage(null)
+      if (e.key === "ArrowLeft") setSelectedImage((i) => (i === null ? i : (i - 1 + galleryItems.length) % galleryItems.length))
+      if (e.key === "ArrowRight") setSelectedImage((i) => (i === null ? i : (i + 1) % galleryItems.length))
+    }
+
+    document.addEventListener("keydown", onKeyDown)
+
+    // prevent background scroll while modal open
+    const prevOverflow = document.body.style.overflow
+    document.body.style.overflow = "hidden"
+
+    return () => {
+      document.removeEventListener("keydown", onKeyDown)
+      document.body.style.overflow = prevOverflow
+    }
+  }, [selectedImage])
+
+  const close = () => setSelectedImage(null)
+
+  const prev = () => {
+    if (selectedImage === null) return
+    setSelectedImage((selectedImage - 1 + galleryItems.length) % galleryItems.length)
+  }
+
+  const next = () => {
+    if (selectedImage === null) return
+    setSelectedImage((selectedImage + 1) % galleryItems.length)
+  }
 
   return (
     <>
@@ -35,6 +69,7 @@ export function MediaGallery() {
                 key={item.id}
                 onClick={() => setSelectedImage(index)}
                 className="relative aspect-[4/5] overflow-hidden rounded-lg shadow-lg group cursor-pointer hover:scale-105 transition-transform duration-500"
+                aria-label={`Open image: ${item.alt}`}
               >
                 <img
                   src={item.src || "/placeholder.svg"}
@@ -50,22 +85,73 @@ export function MediaGallery() {
 
       {/* Lightbox Modal */}
       {selectedImage !== null && (
-        <div className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4">
-          <Button
-            variant="ghost"
-            size="icon"
-            className="absolute top-4 right-4 text-white hover:bg-white/10"
-            onClick={() => setSelectedImage(null)}
-          >
-            <X className="h-6 w-6" />
-          </Button>
-          <img
-            src={galleryItems[selectedImage].src || "/placeholder.svg"}
-            alt={galleryItems[selectedImage].alt}
-            className="max-w-full max-h-full object-contain"
-          />
-        </div>
-      )}
+  <div
+    className="fixed inset-0 z-[9999] bg-black/95"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Image viewer"
+  >
+    {/* Backdrop layer (click to close) */}
+    <button
+      type="button"
+      aria-label="Close image (backdrop)"
+      className="absolute inset-0 cursor-zoom-out"
+      onClick={close}
+    />
+
+    {/* Top controls (always clickable) */}
+    <div className="absolute top-4 right-4 z-[10000] pointer-events-auto">
+      <Button
+        variant="ghost"
+        size="icon"
+        className="text-white hover:bg-white/10"
+        onClick={close}
+        aria-label="Close"
+      >
+        <X className="h-6 w-6" />
+      </Button>
+    </div>
+
+    {/* Prev / Next controls */}
+    <div className="absolute left-4 top-1/2 -translate-y-1/2 z-[10000] pointer-events-auto">
+      <Button
+        variant="ghost"
+        size="icon"
+        className="text-white hover:bg-white/10"
+        onClick={prev}
+        aria-label="Previous image"
+      >
+        <ChevronLeft className="h-7 w-7" />
+      </Button>
+    </div>
+
+    <div className="absolute right-4 top-1/2 -translate-y-1/2 z-[10000] pointer-events-auto">
+      <Button
+        variant="ghost"
+        size="icon"
+        className="text-white hover:bg-white/10"
+        onClick={next}
+        aria-label="Next image"
+      >
+        <ChevronRight className="h-7 w-7" />
+      </Button>
+    </div>
+
+    {/* Content (stops backdrop click) */}
+    <div
+      className="relative z-[9999] h-full w-full flex items-center justify-center p-4 pointer-events-none"
+    >
+      <img
+        src={galleryItems[selectedImage].src || "/placeholder.svg"}
+        alt={galleryItems[selectedImage].alt}
+        className="max-w-full max-h-full object-contain select-none pointer-events-auto"
+        draggable={false}
+        onClick={(e) => e.stopPropagation()} // prevents accidental close when clicking image
+      />
+    </div>
+  </div>
+)}
+
     </>
   )
 }
