@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { useState } from "react"
-import { Instagram, Youtube, Linkedin, Music } from "lucide-react"
+import { Instagram, Youtube, Linkedin, Music, Mail, Ruler, Pin, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -81,11 +81,12 @@ export function Contact() {
           {/* Contact Info & Social */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-xl font-semibold mb-4">Management</h3>
+              <h3 className="text-xl font-semibold mb-4">Info</h3>
               <div className="space-y-2 text-muted-foreground">
-                <p>Creative Artists Agency</p>
-                <p>Email: management@example.com</p>
-                <p>Phone: (555) 123-4567</p>
+                <div className="flex"><Pin className="mr-3"/> Hamilton & Toronto, ON</div>
+                <div className="flex"><Ruler className="mr-3"/> 5'7"</div>
+                <div className="flex"><Mail className="mr-3"/> taylorfrisina@gmail.com</div>
+                <div className="flex"><Phone className="mr-3"/> +1 (289) 456-2500</div>
               </div>
             </div>
 
@@ -115,16 +116,7 @@ export function Contact() {
               </div>
             </div>
 
-            <div className="bg-card rounded-lg p-6">
-              <h3 className="text-lg font-semibold mb-2">Newsletter</h3>
-              <p className="text-sm text-muted-foreground mb-4">
-                Subscribe to receive updates on upcoming performances
-              </p>
-              <div className="flex gap-2">
-                <Input type="email" placeholder="Your email" />
-                <Button>Subscribe</Button>
-              </div>
-            </div>
+            
           </div>
         </div>
 
