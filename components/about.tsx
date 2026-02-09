@@ -27,22 +27,7 @@ export function About() {
     <section id="about" className="relative pt-5">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
-          {/* Image */}
-          <motion.div
-            className="relative aspect-[3/4] overflow-hidden shadow-xl"
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.35 }}
-            variants={{ ...blockVariants, ...leftIn }}
-            transition={{ duration: 0.75, ease: "easeOut" }}
-            
-          >
-            <img
-              src="/Headshot 6.jpg"
-              alt="Professional headshot"
-              className="w-full h-full object-cover"
-            />
-          </motion.div>
+          
 
           {/* Content */}
           <motion.div
@@ -61,7 +46,7 @@ export function About() {
 
             <motion.div
               className="space-y-6 text-muted-foreground leading-relaxed"
-              variants={{ ...listVariants, ...rightIn }}
+              variants={{ ...listVariants, ...leftIn }}
             >
               <motion.p variants={itemVariants} transition={{ duration: 0.55, ease: "easeOut" }}>
                 Taylor Frisina is a Hamilton- and Toronto-based musical theatre performer with international training from the Royal Conservatoire of Scotland, 
@@ -77,6 +62,23 @@ export function About() {
             <Button variant={"ghost"} className="mx-0 px-0 mt-6 hover:bg-background hover:text-foreground underline underline-offset-10 cursor-pointer" size={"lg"}>
               <a href="/about">READ MORE</a>
             </Button> 
+          </motion.div>
+
+          {/* Image */}
+          <motion.div
+            className="relative aspect-[3/4] overflow-hidden shadow-xl"
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.35 }}
+            variants={{ ...blockVariants, ...rightIn }}
+            transition={{ duration: 0.75, ease: "easeOut" }}
+            
+          >
+            <img
+              src="/Headshot 6.jpg"
+              alt="Professional headshot"
+              className="w-full h-full object-cover"
+            />
           </motion.div>
           
         </div>

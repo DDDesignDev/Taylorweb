@@ -34,7 +34,7 @@ export function Navigation() {
         <div className="mx-auto flex  items-center justify-between px-6 py-5 lg:px-12">
           <a
             href="/"
-            className="font-serif text-lg tracking-wide text-foreground transition-opacity hover:opacity-70"
+            className="hero-font text-lg tracking-wide text-foreground transition-opacity hover:opacity-70"
           >
             TF
           </a>

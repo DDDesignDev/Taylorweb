@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mrs+Saint+Delafield&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=Julius+Sans+One&family=Mrs+Saint+Delafield&family=Viaoda+Libre&display=swap');
 
 @import "tailwindcss";
 @import "tw-animate-css";
@@ -10,6 +10,45 @@
   font-weight: 100;
   font-style: light;
 }
+
+.faculty-glyphic-regular {
+  font-family: "Faculty Glyphic", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.mrs-saint-delafield-regular {
+  font-family: "Mrs Saint Delafield", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.viaoda-libre-regular {
+  font-family: "Viaoda Libre", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.julius-sans-one-regular {
+  font-family: "Julius Sans One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+p, #resume span, button {
+  font-size: 12px;
+}
+
+.hero-font, h1, h2, h3, h4, h5, h6 {
+  font-family: "Julius Sans One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
+
+
 
 
 .dark {

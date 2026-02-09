@@ -247,7 +247,7 @@ export function Resume() {
             viewport={{ once: true, amount: 0.35 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            <h3 className="text-2xl font-serif font-semibold mb-6">Teaching & Coaching</h3>
+            <h3 className="text-2xl  mb-6">Teaching & Coaching</h3>
             <motion.ul variants={listVariants} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.35 }} className="space-y-3">
               {awards.map((award, index) => (
                 <motion.li key={index} variants={itemVariants} transition={{ duration: 0.45, ease: "easeOut" }} className="flex items-start gap-2">
@@ -266,7 +266,7 @@ export function Resume() {
             viewport={{ once: true, amount: 0.35 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            <h3 className="text-2xl font-serif font-semibold mb-6">Training & Education</h3>
+            <h3 className="text-2xl mb-6">Training & Education</h3>
             <motion.ul variants={listVariants} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.35 }} className="space-y-3">
               {training.map((item, index) => (
                 <motion.li key={index} variants={itemVariants} transition={{ duration: 0.45, ease: "easeOut" }} className="flex items-start gap-2">
@@ -285,7 +285,7 @@ export function Resume() {
             viewport={{ once: true, amount: 0.35 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            <h3 className="text-2xl font-serif font-semibold mb-6">Special Skills</h3>
+            <h3 className="text-2xl mb-6">Special Skills</h3>
             <motion.ul variants={listVariants} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.35 }} className="space-y-3">
               {skills.map((skill, index) => (
                 <motion.li key={index} variants={itemVariants} transition={{ duration: 0.45, ease: "easeOut" }} className="flex items-start gap-2">

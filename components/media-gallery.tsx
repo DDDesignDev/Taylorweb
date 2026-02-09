@@ -4,12 +4,12 @@ import { useEffect, useMemo, useState } from "react"
 import { X, ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-type MediaCategory = "Headshots" | "Musical Theatre" | "Singing" | "Showreels"
+type MediaCategory = "Headshots" | "Theatre" | "Singing" | "Showreels"
 type MediaItem =
   | { id: number; category: MediaCategory; type: "image"; src: string; alt: string }
   | { id: number; category: MediaCategory; type: "video"; src: string; alt: string } // src can be mp4 OR a YouTube/Vimeo URL
 
-const CATEGORIES: MediaCategory[] = ["Headshots", "Musical Theatre", "Singing", "Showreels"]
+const CATEGORIES: MediaCategory[] = ["Headshots", "Theatre", "Singing", "Showreels"]
 
 const RESUME_URL = "/Frisina Taylor Resume.pdf" // <- change to your real resume path
 
@@ -17,11 +17,19 @@ const galleryItems: MediaItem[] = [
   // Headshots
   { id: 1, category: "Headshots", type: "image", src: "/Headshot 3.jpg", alt: "Headshot 1" },
   { id: 2, category: "Headshots", type: "image", src: "/Headshot 2.jpg", alt: "Headshot 2" },
-  { id: 3, category: "Musical Theatre", type: "image", src: "/Headshot 1.jpg", alt: "Headshot 3" },
-  { id: 4, category: "Showreels", type: "image", src: "/Headshot 4.jpg", alt: "Headshot 4" },
-  { id: 5, category: "Singing", type: "image", src: "/Headshot 5.jpg", alt: "Headshot 5" },
-  { id: 6, category: "Singing", type: "image", src: "/Headshot 6.jpg", alt: "Headshot 6" },
-  { id: 7, category: "Singing", type: "image", src: "/Headshot 7.jpg", alt: "Headshot 7" },
+  { id: 3, category: "Headshots", type: "image", src: "/Headshot 2.jpg", alt: "Headshot 2" },
+
+  { id: 4, category: "Theatre", type: "image", src: "/Headshot 1.jpg", alt: "Headshot 3" },
+  { id: 5, category: "Theatre", type: "image", src: "/Headshot 1.jpg", alt: "Headshot 3" },
+  { id: 6, category: "Theatre", type: "image", src: "/Headshot 1.jpg", alt: "Headshot 3" },
+
+  { id: 7, category: "Showreels", type: "image", src: "/Headshot 4.jpg", alt: "Headshot 4" },
+  { id: 8, category: "Showreels", type: "image", src: "/Headshot 4.jpg", alt: "Headshot 4" },
+  { id: 9, category: "Showreels", type: "image", src: "/Headshot 4.jpg", alt: "Headshot 4" },
+  
+  { id: 10, category: "Singing", type: "image", src: "/Headshot 5.jpg", alt: "Headshot 5" },
+  { id: 11, category: "Singing", type: "image", src: "/Headshot 6.jpg", alt: "Headshot 6" },
+  { id: 12, category: "Singing", type: "image", src: "/Headshot 7.jpg", alt: "Headshot 7" },
 
   // Examples (add your real media)
   // { id: 20, category: "Musical Theatre", type: "image", src: "/pippin-1.jpg", alt: "Pippin production still" },
