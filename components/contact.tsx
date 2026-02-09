@@ -22,14 +22,14 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="py-24 md:py-32 bg-muted relative shadow-2xl">
+    <section id="contact" className="py-24 md:py-32 relative">
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4">Get in Touch</h2>
+          <h2 className="text-4xl md:text-5xl mb-4 header-font">Get in Touch</h2>
           <p className="text-muted-foreground">For booking inquiries, collaborations, or general questions</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="flex flex-col gap-12 px-12">
           {/* Contact Form */}
           <div>
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -42,6 +42,7 @@ export function Contact() {
                   type="text"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  placeholder="Your name"
                   required
                   className="w-full"
                 />
@@ -55,6 +56,7 @@ export function Contact() {
                   type="email"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  placeholder="your@email.com"
                   required
                   className="w-full"
                 />
@@ -70,50 +72,41 @@ export function Contact() {
                   required
                   rows={6}
                   className="w-full"
+                  placeholder="Tell me about your project or inquiry..."
                 />
               </div>
-              <Button type="submit" className="w-full" size="lg">
-                Send Message
-              </Button>
+              <div className="w-full text-center">
+                <Button type="submit" className="w-sm rounded-none" size="lg" variant={"outline"}>
+                  Send Message
+                </Button>
+              </div>
             </form>
           </div>
 
           {/* Contact Info & Social */}
-          <div className="space-y-8">
-            <div>
-              <h3 className="text-xl font-semibold mb-4">Info</h3>
-              <div className="space-y-2 text-muted-foreground">
-                <div className="flex"><Pin className="mr-3"/> Hamilton & Toronto, ON</div>
-                <div className="flex"><Ruler className="mr-3"/> 5'7"</div>
-                <div className="flex"><Mail className="mr-3"/> taylorfrisina@gmail.com</div>
-                <div className="flex"><Phone className="mr-3"/> +1 (289) 456-2500</div>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-semibold mb-4">Follow</h3>
-              <div className="flex gap-4">
-                <Button variant="outline" size="icon" asChild>
-                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-                    <Instagram className="h-5 w-5" />
-                  </a>
-                </Button>
-                <Button variant="outline" size="icon" asChild>
-                  <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
-                    <Youtube className="h-5 w-5" />
-                  </a>
-                </Button>
-                <Button variant="outline" size="icon" asChild>
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                    <Linkedin className="h-5 w-5" />
-                  </a>
-                </Button>
-                <Button variant="outline" size="icon" asChild>
-                  <a href="https://soundcloud.com" target="_blank" rel="noopener noreferrer">
-                    <Music className="h-5 w-5" />
-                  </a>
-                </Button>
-              </div>
+          <div className="space-y-8 flex flex-col items-center text-center">
+            <h3 className="text-sm text-muted-foreground mb-4">taylorfrisina@gmail.com</h3>
+            <div className="flex gap-4 text-muted-foreground">
+              <Button variant="ghost" size="icon" asChild>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                  <Instagram className="h-5 w-5" />
+                </a>
+              </Button>
+              <Button variant="ghost" size="icon" asChild>
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+                  <Youtube className="h-5 w-5" />
+                </a>
+              </Button>
+              <Button variant="ghost" size="icon" asChild>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                  <Linkedin className="h-5 w-5" />
+                </a>
+              </Button>
+              <Button variant="ghost" size="icon" asChild>
+                <a href="https://soundcloud.com" target="_blank" rel="noopener noreferrer">
+                  <Music className="h-5 w-5" />
+                </a>
+              </Button>
             </div>
 
             
@@ -122,7 +115,7 @@ export function Contact() {
 
         {/* Footer */}
         <footer className="mt-16 pt-8 border-t text-center text-sm text-muted-foreground">
-          <p>© 2026 Jane Doe. All rights reserved.</p>
+          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground transition-colors duration-300 hover:text-foreground"><span className="text-primary-foreground">Copyright © 2026</span> Taylor Frisina</p>
         </footer>
       </div>
     </section>

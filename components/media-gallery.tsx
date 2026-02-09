@@ -54,10 +54,10 @@ export function MediaGallery() {
   return (
     <>
       {/* Gallery Grid */}
-      <section id="media" className="py-24 md:py-32 bg-background relative shadow-2xl">
+      <section id="gallery" className="py-24 md:py-32 bg-background relative">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4">Media Gallery</h2>
+            <h2 className="text-4xl md:text-5xl mb-4 header-font">Media Gallery</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               A visual journey through performances, productions, and behind-the-scenes moments
             </p>
@@ -68,7 +68,7 @@ export function MediaGallery() {
               <button
                 key={item.id}
                 onClick={() => setSelectedImage(index)}
-                className="relative aspect-[4/5] overflow-hidden rounded-lg shadow-lg group cursor-pointer hover:scale-105 transition-transform duration-500"
+                className="relative aspect-[4/5] overflow-hidden shadow-lg group cursor-pointer hover:scale-105 transition-transform duration-500"
                 aria-label={`Open image: ${item.alt}`}
               >
                 <img

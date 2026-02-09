@@ -1,39 +1,66 @@
-import { ArrowDown } from "lucide-react"
+"use client"
+
+import { motion } from "framer-motion"
+import Image from "next/image"
 
 export function Hero() {
   return (
-    <section id="home" className="fixed inset-0 z-0">
-      {/* Video Background */}
+    <section className="relative flex h-screen items-center justify-center overflow-hidden">
+      {/* Background image */}
       <div className="absolute inset-0">
-        <video autoPlay loop muted playsInline className="w-full h-full object-cover">
-          <source src="/vocalreel.mp4" type="video/mp4" />
-          {/* Fallback image if video doesn't load */}
-          <img
-            src="/vocalreel.jpg"
-            alt="Performance shot"
-            className="w-full h-full object-cover"
-          />
-        </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
+        <Image
+          src="/Headshot 6.jpg"
+          alt=""
+          fill
+          className="object-cover"
+          priority
+          quality={90}
+        />
+        <div className="absolute inset-0 bg-background/60" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
       </div>
 
-      {/* Content - only visible in initial viewport */}
-      <div className="relative z-10 h-screen flex flex-col items-center justify-center text-center px-4">
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white mb-6 text-balance">Taylor Frisina</h1>
-        <p className="text-xl md:text-2xl lg:text-3xl text-white/90 font-light mb-4">
-          Musical Theatre Performer & Singer
-        </p>
-        <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto text-pretty">
-          Bringing stories to life through song and performance
-        </p>
-
-        {/* Scroll Indicator */}
-        <a
-          href="#about"
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/80 hover:text-white transition-colors animate-bounce"
+      {/* Content */}
+      <div className="relative z-10 flex flex-col items-center px-6 text-center">
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mb-6 text-xs uppercase tracking-[0.35em] text-muted-foreground"
         >
-          <ArrowDown className="h-8 w-8" />
-        </a>
+          Singer &bull; Performer &bull; Musical Theatre
+        </motion.p>
+
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.4 }}
+          className=" text-5xl leading-none tracking-tight text-foreground sm:text-7xl md:text-8xl lg:text-9xl hero-font"
+        >
+          <span className="block">Taylor</span>
+          <span className="mt-2 block">Frisina</span>
+        </motion.h1>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1.2 }}
+          className="mt-12"
+        >
+          <a
+            href="#about"
+            className="group flex flex-col items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
+          >
+            <span className="text-[10px] uppercase tracking-[0.3em]">
+              Scroll
+            </span>
+            <motion.span
+              animate={{ y: [0, 6, 0] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              className="block h-8 w-px bg-muted-foreground/50"
+            />
+          </a>
+        </motion.div>
       </div>
     </section>
   )

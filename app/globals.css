@@ -1,11 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mrs+Saint+Delafield&display=swap');
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
+.hero-ft {
+  font-family: "Inter", sans-serif;
+  font-weight: 100;
+  font-style: light;
+}
+
+.hero-font {
+  font-family: "Mrs Saint Delafield", cursive;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--muted);
+}
+
+
 :root {
-  --background: oklch(0.985 0.003 106.423);
-  --foreground: oklch(0.15 0.01 106.423);
+  --background: oklch(0.15 0.01 106.423);
+  --foreground: oklch(0.985 0.003 106.423);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.15 0.01 106.423);
   --popover: oklch(1 0 0);
@@ -15,7 +31,7 @@
   --secondary: oklch(0.75 0.03 70);
   --secondary-foreground: oklch(0.15 0.01 106.423);
   --muted: oklch(0.94 0.005 106.423);
-  --muted-foreground: oklch(0.5 0.015 106.423);
+  --muted-foreground: oklch(63.343% 0.00007 271.152);
   --accent: oklch(0.65 0.12 60);
   --accent-foreground: oklch(0.15 0.01 106.423);
   --destructive: oklch(0.577 0.245 27.325);

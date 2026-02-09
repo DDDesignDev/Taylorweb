@@ -23,12 +23,12 @@ const rightIn = { hidden: { opacity: 0, x: 100 }, show: { opacity: 1, x: 0 } }
 
 export function About() {
   return (
-    <section id="about" className="py-24 md:py-32 bg-background relative shadow-2xl">
+    <section id="about" className=" bg-background relative shadow-2xl pt-5">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
           {/* Image */}
           <motion.div
-            className="relative aspect-[3/4] overflow-hidden rounded-lg shadow-xl"
+            className="relative aspect-[3/4] overflow-hidden shadow-xl"
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.35 }}
@@ -51,7 +51,7 @@ export function About() {
             variants={listVariants}
           >
             <motion.h2
-              className="text-4xl md:text-5xl font-serif font-bold mb-6"
+              className="text-4xl md:text-5xl mb-6 header-font"
               variants={itemVariants}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >

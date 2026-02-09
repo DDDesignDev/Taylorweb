@@ -4,17 +4,17 @@ import { Playfair_Display, Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-serif",
-  display: "swap",
-})
+// const playfair = Playfair_Display({
+//   subsets: ["latin"],
+//   variable: "--font-serif",
+//   display: "swap",
+// })
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans",
-  display: "swap",
-})
+// const inter = Inter({
+//   subsets: ["latin"],
+//   variable: "--font-sans",
+//   display: "swap",
+// })
 
 export const metadata: Metadata = {
   title: "Taylor Frisina — Musical Theatre Performer & Singer",
@@ -35,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
+      <body>
         {children}
         <Analytics />
       </body>
