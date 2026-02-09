@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Music, Award, GraduationCap } from "lucide-react"
+import { Button } from "./ui/button"
 
 const blockVariants = {
   hidden: { opacity: 0, y: 28 },
@@ -23,7 +24,7 @@ const rightIn = { hidden: { opacity: 0, x: 100 }, show: { opacity: 1, x: 0 } }
 
 export function About() {
   return (
-    <section id="about" className=" bg-background relative shadow-2xl pt-5">
+    <section id="about" className="relative pt-5">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
           {/* Image */}
@@ -63,27 +64,21 @@ export function About() {
               variants={{ ...listVariants, ...rightIn }}
             >
               <motion.p variants={itemVariants} transition={{ duration: 0.55, ease: "easeOut" }}>
-                Taylor Frisina is a Hamilton and Toronto based musical theatre performer and educator with extensive training and performance experience across Canada and the United Kingdom. She holds a Master’s Degree in Musical Theatre from the Royal Conservatoire of Scotland (2023) and is a graduate of the Randolph College of the Performing Arts (2022), bringing a strong foundation in acting, voice, and movement to her work.
+                Taylor Frisina is a Hamilton- and Toronto-based musical theatre performer with international training from the Royal Conservatoire of Scotland, 
+                where she earned her Master’s Degree in Musical Theatre in 2023. Known for her versatility and strong storytelling, she is a mezzo-soprano with a belt to G5.
               </motion.p>
 
               <motion.p variants={itemVariants} transition={{ duration: 0.55, ease: "easeOut" }}>
-                A mezzo-soprano with a belt to G5, Taylor is known for her versatility, vocal strength, and dynamic storytelling. Her performance credits include leading and featured roles such as Guinevere/Lady of the Lake (Spamalot), the Witch (Into the Woods), Belle (Beauty and the Beast), the Leading Player (Pippin), and many more. She has also performed as a soloist with orchestral and symphonic ensembles, including the Cambridge Symphony Orchestra and the University of Toronto Hart House Symphonic Band, as well as in concert and cabaret settings.
-              </motion.p>
-
-              <motion.p variants={itemVariants} transition={{ duration: 0.55, ease: "easeOut" }}>
-                In addition to her work on stage, Taylor is an experienced educator and creative collaborator working with both youth and adult performers. She currently works as a choreographer, vocal coach, and piano teacher, contributing to creative teams on productions such as School of Rock, Mary Poppins JR., Alice in Wonderland JR., and more.
-              </motion.p>
-
-              <motion.p variants={itemVariants} transition={{ duration: 0.55, ease: "easeOut" }}>
-                Passionate about performer development, Taylor focuses on building confident, expressive artists through technically grounded, supportive, and artist-centered training.
-              </motion.p>
-
-              <motion.p variants={itemVariants} transition={{ duration: 0.55, ease: "easeOut" }}>
-                Taylor continues to refine her craft through ongoing professional training and is always excited to collaborate on projects that challenge, inspire, and connect with audiences.
+                Her favourite roles include Guinevere (Spamalot), the Witch (Into the Woods), Belle (Beauty and the Beast), and the Leading Player (Pippin), 
+                with performance credits spanning Canada and the United Kingdom. Alongside performing, Taylor is a passionate educator,
+                 working as a vocal coach, piano teacher, and choreographer for theatre programs and music academies throughout the Greater Toronto Area.
               </motion.p>
             </motion.div>
-
+            <Button variant={"ghost"} className="mx-0 px-0 mt-6 hover:bg-background hover:text-foreground underline underline-offset-10 cursor-pointer" size={"lg"}>
+              <a href="/about">READ MORE</a>
+            </Button> 
           </motion.div>
+          
         </div>
       </div>
     </section>

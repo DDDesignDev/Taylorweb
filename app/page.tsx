@@ -9,14 +9,12 @@ import { Navigation } from "@/components/navigation"
 export default function PortfolioPage() {
   return (
     <main className="min-h-screen">
-      <Navigation />
       <Hero />
       <div className="relative z-10 pt-24">
         <MediaGallery />
         <About />
         <AudioVideo />
         <Resume />
-        <Contact />
       </div>
     </main>
   )

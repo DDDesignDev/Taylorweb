@@ -22,17 +22,17 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="py-24 md:py-32 relative">
-      <div className="container mx-auto px-4 max-w-4xl">
+    <section id="contact" className=" md:py-2 relative pb-12">
+      <div className="container mx-auto px-4 max-w-6xl border-t pt-16">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl mb-4 header-font">Get in Touch</h2>
           <p className="text-muted-foreground">For booking inquiries, collaborations, or general questions</p>
         </div>
 
-        <div className="flex flex-col gap-12 px-12">
+        <div className="flex flex-col items-center gap-12 px-12">
           {/* Contact Form */}
           <div>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6 w-sm md:w-xl">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-2">
                   Name
@@ -76,7 +76,7 @@ export function Contact() {
                 />
               </div>
               <div className="w-full text-center">
-                <Button type="submit" className="w-sm rounded-none" size="lg" variant={"outline"}>
+                <Button type="submit" className="w-[200px] md:w-lg rounded-none" variant={"outline"}>
                   Send Message
                 </Button>
               </div>
@@ -112,11 +112,6 @@ export function Contact() {
             
           </div>
         </div>
-
-        {/* Footer */}
-        <footer className="mt-16 pt-8 border-t text-center text-sm text-muted-foreground">
-          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground transition-colors duration-300 hover:text-foreground"><span className="text-primary-foreground">Copyright © 2026</span> Taylor Frisina</p>
-        </footer>
       </div>
     </section>
   )

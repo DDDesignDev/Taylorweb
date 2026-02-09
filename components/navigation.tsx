@@ -5,11 +5,11 @@ import { Menu, X } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 
 const navLinks = [
-  { href: "#about", label: "About" },
-  { href: "#gallery", label: "Gallery" },
-  { href: "#showreel", label: "Showreel" },
-  { href: "#resume", label: "Resume" },
-  { href: "#contact", label: "Contact" },
+  { href: "/about", label: "About" },
+  { href: "/#gallery", label: "Gallery" },
+  { href: "/#showreel", label: "Showreel" },
+  { href: "/#resume", label: "Resume" },
+  { href: "/#contact", label: "Contact" },
 ]
 
 export function Navigation() {
@@ -31,9 +31,9 @@ export function Navigation() {
             : "bg-transparent"
         }`}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-12">
+        <div className="mx-auto flex  items-center justify-between px-6 py-5 lg:px-12">
           <a
-            href="#"
+            href="/"
             className="font-serif text-lg tracking-wide text-foreground transition-opacity hover:opacity-70"
           >
             TF
