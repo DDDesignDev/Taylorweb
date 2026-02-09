@@ -4,37 +4,30 @@ import { useEffect, useMemo, useState } from "react"
 import { X, ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-type MediaCategory = "Headshots" | "Theatre" | "Singing" | "Showreels"
+type MediaCategory = "Headshots" | "Theatre" | "Singing" 
 type MediaItem =
   | { id: number; category: MediaCategory; type: "image"; src: string; alt: string }
   | { id: number; category: MediaCategory; type: "video"; src: string; alt: string } // src can be mp4 OR a YouTube/Vimeo URL
 
-const CATEGORIES: MediaCategory[] = ["Headshots", "Theatre", "Singing", "Showreels"]
-
-const RESUME_URL = "/Frisina Taylor Resume.pdf" // <- change to your real resume path
+const CATEGORIES: MediaCategory[] = ["Headshots", "Theatre", "Singing"]
 
 const galleryItems: MediaItem[] = [
   // Headshots
-  { id: 1, category: "Headshots", type: "image", src: "/Headshot 3.jpg", alt: "Headshot 1" },
-  { id: 2, category: "Headshots", type: "image", src: "/Headshot 2.jpg", alt: "Headshot 2" },
-  { id: 3, category: "Headshots", type: "image", src: "/Headshot 2.jpg", alt: "Headshot 2" },
+  { id: 1, category: "Headshots", type: "image", src: "/head3.jpg", alt: "Headshot 1" },
+  { id: 2, category: "Headshots", type: "image", src: "/head2.jpg", alt: "Headshot 2" },
+  { id: 3, category: "Headshots", type: "image", src: "/head1.jpg", alt: "Headshot 3" },
 
-  { id: 4, category: "Theatre", type: "image", src: "/Headshot 1.jpg", alt: "Headshot 3" },
-  { id: 5, category: "Theatre", type: "image", src: "/Headshot 1.jpg", alt: "Headshot 3" },
-  { id: 6, category: "Theatre", type: "image", src: "/Headshot 1.jpg", alt: "Headshot 3" },
-
-  { id: 7, category: "Showreels", type: "image", src: "/Headshot 4.jpg", alt: "Headshot 4" },
-  { id: 8, category: "Showreels", type: "image", src: "/Headshot 4.jpg", alt: "Headshot 4" },
-  { id: 9, category: "Showreels", type: "image", src: "/Headshot 4.jpg", alt: "Headshot 4" },
+  { id: 4, category: "Theatre", type: "image", src: "/the1.jpg", alt: "Headshot 3" },
+  { id: 5, category: "Theatre", type: "image", src: "/the3.jpg", alt: "Headshot 3" },
+  { id: 6, category: "Theatre", type: "image", src: "/the2.jpg", alt: "Headshot 3" },
   
-  { id: 10, category: "Singing", type: "image", src: "/Headshot 5.jpg", alt: "Headshot 5" },
-  { id: 11, category: "Singing", type: "image", src: "/Headshot 6.jpg", alt: "Headshot 6" },
-  { id: 12, category: "Singing", type: "image", src: "/Headshot 7.jpg", alt: "Headshot 7" },
+  { id: 10, category: "Singing", type: "image", src: "/sing2.jpg", alt: "Headshot 5" },
+  { id: 11, category: "Singing", type: "image", src: "/sing1.jpg", alt: "Headshot 6" },
+  { id: 12, category: "Singing", type: "image", src: "/sing3.jpg", alt: "Headshot 7" },
 
   // Examples (add your real media)
   // { id: 20, category: "Musical Theatre", type: "image", src: "/pippin-1.jpg", alt: "Pippin production still" },
   // { id: 30, category: "Singing", type: "image", src: "/concert-1.jpg", alt: "Concert performance still" },
-  // { id: 40, category: "Showreels", type: "video", src: "https://www.youtube.com/watch?v=XXXX", alt: "Showreel" },
 ]
 
 function isYouTube(url: string) {
@@ -125,18 +118,19 @@ export function MediaGallery() {
             {CATEGORIES.map((cat) => {
               const active = cat === activeCategory
               return (
-                <button
+                <Button
                   key={cat}
                   type="button"
                   onClick={() => setActiveCategory(cat)}
+                  variant={"ghost"}
                   className={[
-                    "relative px-1 pb-2 text-sm md:text-base tracking-wide transition-colors",
-                    "text-muted-foreground hover:text-foreground",
+                    "relative px-1 pb-2 text-sm md:text-base  transition-colors",
+                    "text-muted-foreground hover:text-foreground hover:bg-0",
                     active ? "text-foreground" : "",
                   ].join(" ")}
                   aria-current={active ? "page" : undefined}
                 >
-                  <span className="font-medium">{cat}</span>
+                  <span className="">{cat}</span>
                   <span
                     aria-hidden
                     className={[
@@ -144,38 +138,15 @@ export function MediaGallery() {
                       active ? "opacity-100 bg-foreground" : "opacity-0 bg-foreground",
                     ].join(" ")}
                   />
-                </button>
+                </Button>
               )
             })}
           </div>
-            <div className="mb-10 flex items-center justify-center text-xs tracking-[0.18em] uppercase text-white/70">
-              <button
-                type="button"
-                onClick={prev}
-                className="hover:text-white transition-colors uppercase duration-300"
-                aria-label="Previous"
-              >
-                Prev
-              </button>
-              <span className="mx-4 text-white/35">|</span>
-              <a
-                href={RESUME_URL}
-                target="_blank"
-                rel="noreferrer"
-                className="hover:text-white transition-colors uppercase duration-300"
-              >
-                View Resume
-              </a>
-              <span className="mx-4 text-white/35">|</span>
-              <button
-                type="button"
-                onClick={next}
-                className="hover:text-white transition-colors uppercase duration-300"
-                aria-label="Next"
-              >
-                Next
-              </button>
-            </div>
+          <div className="mx-auto flex justify-center mb-8">
+            <Button className="">
+              <a href="/gallery">View All</a>
+            </Button>
+          </div>
 
           {/* Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
@@ -223,25 +194,27 @@ export function MediaGallery() {
                 {CATEGORIES.map((cat) => {
                   const active = cat === activeCategory
                   return (
-                    <button
+                    <Button
                       key={cat}
                       type="button"
                       onClick={() => setActiveCategory(cat)}
+                      variant={"ghost"}
                       className={[
-                        "relative px-1 pb-2 text-xs md:text-sm tracking-wide transition-colors",
-                        "text-white/55 hover:text-white",
-                        active ? "text-white" : "",
+                        "relative px-1 pb-2 text-sm md:text-base  transition-colors",
+                        "text-muted-foreground hover:text-foreground hover:bg-0",
+                        active ? "text-foreground" : "",
                       ].join(" ")}
+                      aria-current={active ? "page" : undefined}
                     >
-                      <span className="font-medium">{cat}</span>
+                      <span className="">{cat}</span>
                       <span
                         aria-hidden
                         className={[
                           "absolute left-0 right-0 -bottom-[1px] h-[2px] rounded-full transition-opacity",
-                          active ? "opacity-100 bg-white" : "opacity-0 bg-white",
+                          active ? "opacity-100 bg-foreground" : "opacity-0 bg-foreground",
                         ].join(" ")}
                       />
-                    </button>
+                    </Button>
                   )
                 })}
               </div>
@@ -258,12 +231,12 @@ export function MediaGallery() {
                 </button>
                 <span className="mx-4 text-white/35">|</span>
                 <a
-                  href={RESUME_URL}
+                  href="/gallery"
                   target="_blank"
                   rel="noreferrer"
                   className="hover:text-white transition-colors uppercase duration-300"
                 >
-                  View Resume
+                  View Gallery
                 </a>
                 <span className="mx-4 text-white/35">|</span>
                 <button

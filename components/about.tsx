@@ -24,7 +24,7 @@ const rightIn = { hidden: { opacity: 0, x: 100 }, show: { opacity: 1, x: 0 } }
 
 export function About() {
   return (
-    <section id="about" className="relative pt-5">
+    <section id="about" className="relative pt-20">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
           

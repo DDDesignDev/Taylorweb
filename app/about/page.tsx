@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui/button";
+
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-background text-foreground">
@@ -24,7 +26,7 @@ export default function AboutPage() {
           <div className="mx-auto max-w-6xl px-4 md:min-h-screen flex items-center">
             <div className="md:ml-auto md:w-1/2 py-20 md:py-0">
               {/* Overlay card on mobile */}
-              <div className=" ml-4 md:rounded-none p-6 md:p-0 absolute top-100">
+              <div className=" mx-4 md:rounded-none p-6 md:p-0 absolute top-100">
                 <p className="text-sm tracking-[0.28em] uppercase text-white/70 md:text-muted-foreground">
                   About
                 </p>
@@ -128,26 +130,33 @@ export default function AboutPage() {
               </dl>
 
               <div className="mt-8 flex flex-col gap-3">
-                <a
-                  href="/#gallery"
-                  className="border border-primary px-5 py-3 text-center text-sm font-medium text-primary hover:text-white hover:bg-black/40 transition"
-                >
-                  View Media
-                </a>
-                <a
-                  href="/Frisina Taylor Resume.pdf"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="border border-primary px-5 py-3 text-center text-sm font-medium text-primary hover:text-white hover:bg-black/40 transition"
-                >
-                  View Resume
-                </a>
-                <a
-                  href="#contact"
-                  className="border border-primary bg-primary px-5 py-3 text-center text-sm font-medium text-background hover:bg-foreground transition"
-                >
-                  Contact
-                </a>
+                <Button variant="outline" asChild>
+                  <a
+                    href="/#gallery"
+                    className="border border-primary px-5 py-3 text-center text-sm font-medium text-primary hover:text-foreground hover:bg-black/40 transition"
+                  >
+                    View Media
+                  </a>
+                </Button>
+                <Button variant="outline" asChild>
+                  <a
+                    href="/Frisina Taylor Resume.pdf"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="border border-primary px-5 py-3 text-center text-sm font-medium text-primary hover:text-foreground hover:bg-black/40 transition"
+                  >
+                    View Resume
+                  </a>
+                </Button>
+                <Button variant="outline" className="hover" asChild>
+                  <a
+                    href="#contact"
+                    className="border border-primary bg-primary px-5 py-3 text-center text-sm font-medium text-background hover:text-foreground transition"
+                  >
+                    Contact
+                  </a>
+                </Button>
+
               </div>
             </div>
 

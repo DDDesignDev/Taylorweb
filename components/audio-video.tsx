@@ -14,7 +14,7 @@ export function AudioVideo() {
               <div className="aspect-video bg-muted overflow-hidden shadow-lg">
                 <iframe
                   className="w-full h-full"
-                  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                  src="http://youtube.com/watch?v=Xk8VB32uNgw&feature=youtu.be"
                   title="Performance Reel"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen

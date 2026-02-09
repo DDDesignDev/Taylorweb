@@ -208,7 +208,6 @@ export function Resume() {
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
             <h3 className="text-2xl font-serif font-semibold mb-6 flex items-center gap-2">
-              <Star className="h-6 w-6" />
               Productions
             </h3>
 
