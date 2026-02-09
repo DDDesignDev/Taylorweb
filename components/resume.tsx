@@ -184,7 +184,7 @@ const itemVariants = {
 
 export function Resume() {
   return (
-    <section id="credits" className="py-24 md:py-32 bg-background relative">
+    <section id="resume" className="py-24 md:py-32 bg-background relative">
       <div className="container mx-auto px-4 max-w-6xl">
         {/* Header can animate lightly (optional) */}
         <motion.div

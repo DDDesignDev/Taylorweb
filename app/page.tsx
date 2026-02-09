@@ -12,8 +12,8 @@ export default function PortfolioPage() {
       <Navigation />
       <Hero />
       <div className="relative z-10 pt-24">
-        <About />
         <MediaGallery />
+        <About />
         <AudioVideo />
         <Resume />
         <Contact />
