@@ -43,16 +43,51 @@ export const metadata: Metadata = {
   },
 }
 
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      url: siteUrl,
+      name: "Taylor Frisina",
+      description:
+        "Official website of Taylor Frisina, musical theatre performer and educator based in Hamilton and Toronto.",
+      inLanguage: "en-CA",
+    },
+    {
+      "@type": "Person",
+      "@id": `${siteUrl}/#person`,
+      name: "Taylor Frisina",
+      url: siteUrl,
+      jobTitle: ["Musical Theatre Performer", "Educator", "Vocal Coach", "Choreographer"],
+      image: `${siteUrl}/og/head1.jpg`, // or a real headshot URL
+      sameAs: [
+        // put your real links (remove any you don't have)
+        // "https://www.instagram.com/yourhandle",
+        // "https://www.youtube.com/@yourchannel",
+        // "https://www.linkedin.com/in/yourprofile",
+      ],
+      homeLocation: [
+        { "@type": "City", name: "Hamilton, Ontario, Canada" },
+        { "@type": "City", name: "Toronto, Ontario, Canada" },
+      ],
+    },
+  ],
+}
   return (
     <html lang="en" className="scroll-smooth">
       <body>
         <Navigation />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {children}
         <Contact />
         <Analytics />
