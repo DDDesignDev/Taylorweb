@@ -1,32 +1,51 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Playfair_Display, Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import { Navigation } from "@/components/navigation"
 import { Contact } from "@/components/contact"
 
-// const playfair = Playfair_Display({
-//   subsets: ["latin"],
-//   variable: "--font-serif",
-//   display: "swap",
-// })
-
-// const inter = Inter({
-//   subsets: ["latin"],
-//   variable: "--font-sans",
-//   display: "swap",
-// })
 
 export const metadata: Metadata = {
-  title: "Taylor Frisina — Musical Theatre Performer & Singer",
+  metadataBase: new URL("https://taylorfrisina.com"), // ← update to real domain
+  title: {
+    default: "Taylor Frisina | Musical Theatre Performer & Educator",
+    template: "%s | Taylor Frisina",
+  },
   description:
-    "Professional musical theatre performer and singer. View performance reels, resume, and booking information.",
-  keywords: ["musical theatre", "performer", "singer", "mezzo soprano", "Taylor Frisina"],
+    "Taylor Frisina is a Hamilton- and Toronto-based musical theatre performer, mezzo-soprano, and educator with international training and professional experience.",
+  keywords: [
+    "Taylor Frisina",
+    "musical theatre performer",
+    "mezzo soprano",
+    "theatre performer Canada",
+    "Toronto musical theatre",
+    "Hamilton musical theatre",
+    "vocal coach",
+    "choreographer",
+  ],
+  authors: [{ name: "Taylor Frisina" }],
+  creator: "Taylor Frisina",
   openGraph: {
-    title: "Taylor Frisina — Musical Theatre Performer & Singer",
-    description: "Professional musical theatre performer and singer with Broadway and national tour credits",
     type: "website",
+    locale: "en_CA",
+    siteName: "Taylor Frisina",
+    images: [
+      {
+        url: "/headshots/head1.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Taylor Frisina – Musical Theatre Performer & Educator",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/headshots/head1.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 }
 

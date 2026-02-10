@@ -1,4 +1,17 @@
 import Resume from "@/components/resume"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Resume & Credits",
+  description:
+    "Professional resume and selected performance credits for musical theatre performer and educator Taylor Frisina.",
+  openGraph: {
+    title: "Resume & Credits | Taylor Frisina",
+    description:
+      "Selected theatre, concert, and training credits for musical theatre performer Taylor Frisina.",
+    url: "/resume",
+  },
+}
 
 export default function ResumePage() {
   return (
