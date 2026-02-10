@@ -58,7 +58,7 @@ export function About() {
                  working as a vocal coach, piano teacher, and choreographer for theatre programs and music academies throughout the Greater Toronto Area.
               </motion.p>
             </motion.div>
-            <Button variant={"ghost"} className="mx-0 px-0 mt-6 hover:bg-background hover:text-foreground underline underline-offset-10 cursor-pointer" size={"lg"}>
+            <Button variant={"ghost"} className="mx-0 px-0 mt-6 hover:bg-background hover:text-foreground underline underline-offset-10 cursor-pointer hover:decoration-2" size={"lg"}>
               <a href="/about">READ MORE</a>
             </Button> 
           </motion.div>

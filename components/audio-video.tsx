@@ -52,7 +52,10 @@ export function AudioVideo() {
           <motion.div variants={fadeUp} transition={{ duration: 0.6, ease }} className="block md:hidden mb-4">
             <h4 className="font-semibold mb-2">Vocal Reel</h4>
             <p className="text-sm text-muted-foreground">
-              Watch my vocal reel from a combination of performances
+              A curated vocal reel showcasing a range of musical theatre styles, vocal colors,
+              and storytelling through song. This compilation highlights both contemporary and
+              classic repertoire, featuring live performance footage that reflects vocal
+              versatility, emotional clarity, and strong technique.
             </p>
           </motion.div>
 
@@ -79,8 +82,11 @@ export function AudioVideo() {
             className="hidden md:flex flex-col items-start justify-center"
           >
             <h4 className="font-semibold mb-2">Vocal Reel</h4>
-            <p className="text-sm text-muted-foreground">
-              Watch my vocal reel from a combination of performances
+            <p className="text-sm text-muted-foreground leading-relaxed max-w-md">
+              A curated vocal reel showcasing a range of musical theatre styles, vocal colors,
+              and storytelling through song. This compilation highlights both contemporary and
+              classic repertoire, featuring live performance footage that reflects vocal
+              versatility, emotional clarity, and strong technique.
             </p>
           </motion.div>
         </motion.div>
@@ -101,7 +107,10 @@ export function AudioVideo() {
           >
             <h4 className="font-semibold mb-2">Casting Workbook</h4>
             <p className="text-sm text-muted-foreground">
-              Watch additional clips and materials via Casting Workbook
+              A selection of additional performance clips, self-tapes, and materials available
+              through Casting Workbook. This reel provides further insight into acting range,
+              on-camera presence, and adaptability across styles and formats, supporting both
+              theatrical and screen-based casting submissions.
             </p>
           </motion.div>
 

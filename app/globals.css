@@ -45,10 +45,8 @@ p, #resume span {
   font-style: normal;
 }
 
-
-
-
-
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
 
 .dark {
@@ -63,7 +61,7 @@ p, #resume span {
   --secondary: oklch(0.75 0.03 70);
   --secondary-foreground: oklch(0.15 0.01 106.423);
   --muted: oklch(0.94 0.005 106.423);
-  --muted-foreground: oklch(63.343% 0.00007 271.152);
+  --muted-foreground: oklch(34.458% 0.00004 271.152);
   --accent: oklch(62.935% 0.25006 333.633);
   --accent-foreground: oklch(0.15 0.01 106.423);
   --destructive: oklch(0.577 0.245 27.325);

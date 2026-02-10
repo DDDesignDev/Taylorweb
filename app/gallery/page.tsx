@@ -174,218 +174,239 @@ export default function GalleryPage() {
 
   const current = selectedIndex !== null ? filteredItems[selectedIndex] : null
 return (
-    <main className="min-h-screen bg-background text-foreground">
-      {/* Gallery Grid */}
-      <section id="gallery" className="py-24 md:py-28 bg-background relative">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-10">
-            <h2 className="text-4xl md:text-6xl header-font">Media Gallery</h2>
-            <p className="mt-3 text-muted-foreground">
-              Take a look at some of my headshots, theatre performances, singing engagements, and showreels.
-            </p>
-          </div>
-
-          {/* Tabs */}
-          <div className="flex items-center justify-center gap-6 md:gap-10 mb-10">
-            {CATEGORIES.map((cat) => {
-              const active = cat === activeCategory
-              return (
-                <Button
-                  key={cat}
-                  type="button"
-                  onClick={() => setActiveCategory(cat)}
-                  variant={"ghost"}
-                  className={[
-                    "relative px-1 pb-2 text-sm md:text-base  transition-colors",
-                    "text-muted-foreground hover:text-foreground hover:bg-0",
-                    active ? "text-foreground" : "",
-                  ].join(" ")}
-                  aria-current={active ? "page" : undefined}
-                >
-                  <span className="">{cat}</span>
-                  <span
-                    aria-hidden
-                    className={[
-                      "absolute left-0 right-0 -bottom-[1px] h-[2px] rounded-full transition-opacity",
-                      active ? "opacity-100 bg-foreground" : "opacity-0 bg-foreground",
-                    ].join(" ")}
-                  />
-                </Button>
-              )
-            })}
-          </div>
-          
-
-          {/* Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-            {filteredItems.map((item, index) => (
-              <button
-                key={item.id}
-                onClick={() => setSelectedIndex(index)}
-                className="relative aspect-[4/5] overflow-hidden shadow-lg group cursor-pointer hover:scale-105 transition-transform duration-500"
-                aria-label={`Open: ${item.alt}`}
-              >
-                {item.type === "image" ? (
-                  <img
-                    src={item.src || "/placeholder.svg"}
-                    alt={item.alt}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                ) : (
-                  <div className="relative w-full h-full">
-                    {getVideoThumb(item) ? (
-                      <img
-                        src={getVideoThumb(item) || "/placeholder.svg"}
-                        alt={`${item.alt} thumbnail`}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                      />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center bg-black/10">
-                        <span className="text-sm text-muted-foreground">Video</span>
-                      </div>
-                    )}
-
-                    {/* Play icon overlay */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="rounded-full border border-white/20 bg-black/40 backdrop-blur px-5 py-4">
-                        <span className="text-white/90 text-sm tracking-wide">Play</span>
-                      </div>
-                    </div>
-                  </div>
-                )}
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300" />
-              </button>
-            ))}
-          </div>
+  <main className="min-h-screen bg-background text-foreground">
+    {/* Gallery Grid */}
+    <section id="gallery" className="py-24 md:py-28 bg-background relative">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-10">
+          <h2 className="text-4xl md:text-6xl header-font">Media Gallery</h2>
+          <p className="mt-3 text-muted-foreground">
+            Take a look at some of my headshots, theatre performances, singing engagements, and showreels.
+          </p>
         </div>
-      </section>
 
-      {/* Lightbox Modal */}
-      {selectedIndex !== null && current && (
-        <div className="fixed inset-0 z-[9999] bg-black/95" role="dialog" aria-modal="true" aria-label="Media viewer">
-          {/* Backdrop layer (click to close) */}
-          <button
-            type="button"
-            aria-label="Close (backdrop)"
-            className="absolute inset-0 cursor-zoom-out"
-            onClick={close}
-          />
+        {/* Tabs */}
+        <div className="relative mb-10">
+          {/* subtle edge fades (optional but nice) */}
+          <div aria-hidden className="pointer-events-none absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-background to-transparent md:hidden" />
+          <div aria-hidden className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-background to-transparent md:hidden" />
 
-          {/* Header: Tabs + Prev | View Resume | Next */}
-          <div className="relative top-15 left-0 right-0 z-[10000] pointer-events-auto">
-            <div className="mx-auto max-w-6xl px-4 pt-6">
-              {/* Tabs row */}
-              <div className="flex items-center justify-center gap-6 md:gap-10">
-                {CATEGORIES.map((cat) => {
-                  const active = cat === activeCategory
-                  return (
-                    <Button
-                      key={cat}
-                      type="button"
-                      onClick={() => setActiveCategory(cat)}
-                      variant={"ghost"}
+          {/* scroll container */}
+          <div className="-mx-4 px-4 overflow-x-auto md:overflow-visible">
+            <div className="flex w-max md:w-full md:justify-center items-center gap-6 md:gap-10 whitespace-nowrap">
+              {CATEGORIES.map((cat) => {
+                const active = cat === activeCategory
+                return (
+                  <Button
+                    key={cat}
+                    type="button"
+                    onClick={() => setActiveCategory(cat)}
+                    variant="ghost"
+                    className={[
+                      "relative px-1 pb-2 text-sm md:text-base transition-colors",
+                      "text-muted-foreground hover:text-foreground hover:bg-0",
+                      "shrink-0", // 👈 important so buttons don’t compress on mobile
+                      active ? "text-foreground" : "",
+                    ].join(" ")}
+                    aria-current={active ? "page" : undefined}
+                  >
+                    <span>{cat}</span>
+                    <span
+                      aria-hidden
                       className={[
-                        "relative px-1 pb-2 text-sm md:text-base  transition-colors",
-                        "text-muted-foreground hover:text-foreground hover:bg-0",
-                        active ? "text-foreground" : "",
+                        "absolute left-0 right-0 -bottom-[1px] h-[2px] rounded-full transition-opacity",
+                        active ? "opacity-100 bg-foreground" : "opacity-0 bg-foreground",
                       ].join(" ")}
-                      aria-current={active ? "page" : undefined}
-                    >
-                      <span className="">{cat}</span>
-                      <span
-                        aria-hidden
-                        className={[
-                          "absolute left-0 right-0 -bottom-[1px] h-[2px] rounded-full transition-opacity",
-                          active ? "opacity-100 bg-foreground" : "opacity-0 bg-foreground",
-                        ].join(" ")}
-                      />
-                    </Button>
-                  )
-                })}
-              </div>
-
-              {/* Prev | View Resume | Next row */}
-              <div className="mt-4 flex items-center justify-center text-xs tracking-[0.18em] uppercase text-white/70">
-                <button
-                  type="button"
-                  onClick={prev}
-                  className="hover:text-white transition-colors uppercase duration-300"
-                  aria-label="Previous"
-                >
-                  Prev
-                </button>
-                <span className="mx-4 text-white/35">|</span>
-                <a
-                  href="/gallery"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="hover:text-white transition-colors uppercase duration-300"
-                >
-                  View Gallery
-                </a>
-                <span className="mx-4 text-white/35">|</span>
-                <button
-                  type="button"
-                  onClick={next}
-                  className="hover:text-white transition-colors uppercase duration-300"
-                  aria-label="Next"
-                >
-                  Next
-                </button>
-              </div>
+                    />
+                  </Button>
+                )
+              })}
             </div>
           </div>
+        </div>
 
-          {/* Close button (top-right) */}
-          <div className="absolute top-4 right-4 z-[10000] pointer-events-auto">
-            <Button variant="ghost" size="icon" className="text-white hover:bg-white/10" onClick={close} aria-label="Close">
-              <X className="h-6 w-6" />
-            </Button>
-          </div>
+        
 
-          {/* Side chevrons (optional; keep if you like) */}
-          <div className="absolute left-4 top-1/2 -translate-y-1/2 z-[10000] pointer-events-auto">
-            <Button variant="ghost" size="icon" className="text-white hover:bg-white/10" onClick={prev} aria-label="Previous">
-              <ChevronLeft className="h-7 w-7" />
-            </Button>
-          </div>
+        {/* Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+          {filteredItems.map((item, index) => (
+            <button
+              key={item.id}
+              onClick={() => setSelectedIndex(index)}
+              className="relative aspect-[4/5] overflow-hidden shadow-lg group cursor-pointer hover:scale-105 transition-transform duration-500"
+              aria-label={`Open: ${item.alt}`}
+            >
+              {item.type === "image" ? (
+                <img
+                  src={item.src || "/placeholder.svg"}
+                  alt={item.alt}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+              ) : (
+                <div className="relative w-full h-full">
+                  {getVideoThumb(item) ? (
+                    <img
+                      src={getVideoThumb(item) || "/placeholder.svg"}
+                      alt={`${item.alt} thumbnail`}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center bg-black/10">
+                      <span className="text-sm text-muted-foreground">Video</span>
+                    </div>
+                  )}
 
-          <div className="absolute right-4 top-1/2 -translate-y-1/2 z-[10000] pointer-events-auto">
-            <Button variant="ghost" size="icon" className="text-white hover:bg-white/10" onClick={next} aria-label="Next">
-              <ChevronRight className="h-7 w-7" />
-            </Button>
-          </div>
+                  {/* Play icon overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="rounded-full border border-white/20 bg-black/40 backdrop-blur px-5 py-4">
+                      <span className="text-white/90 text-sm tracking-wide">Play</span>
+                    </div>
+                  </div>
+                </div>
+              )}
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300" />
+            </button>
+          ))}
+        </div>
+      </div>
+    </section>
 
-          {/* Content */}
-          <div className="relative z-[9999] h-full w-full flex items-center justify-center pt-22 p-4 pointer-events-none">
-            {current.type === "image" ? (
-              <img
-                src={current.src || "/placeholder.svg"}
-                alt={current.alt}
-                className="max-w-full max-h-full object-contain select-none pointer-events-auto"
-                draggable={false}
-                onClick={(e) => e.stopPropagation()}
-              />
-            ) : (
-              <div className="w-full max-w-5xl aspect-video pointer-events-auto" onClick={(e) => e.stopPropagation()}>
-                {current.src.endsWith(".mp4") ? (
-                  <video className="w-full h-full" controls playsInline>
-                    <source src={current.src} type="video/mp4" />
-                  </video>
-                ) : (
-                  <iframe
-                    className="w-full h-full"
-                    src={toEmbedUrl(current.src)}
-                    title={current.alt}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
-                )}
+    {/* Lightbox Modal */}
+    {selectedIndex !== null && current && (
+      <div className="fixed inset-0 z-[9999] bg-black/95" role="dialog" aria-modal="true" aria-label="Media viewer">
+        {/* Backdrop layer (click to close) */}
+        <button
+          type="button"
+          aria-label="Close (backdrop)"
+          className="absolute inset-0 cursor-zoom-out"
+          onClick={close}
+        />
+
+        {/* Header: Tabs + Prev | View Resume | Next */}
+        <div className="relative top-15 left-0 right-0 z-[10000] pointer-events-auto">
+          <div className="mx-auto max-w-6xl px-4 pt-6">
+            {/* Tabs row */}
+            <div className="relative mb-10">
+              {/* subtle edge fades (optional but nice) */}
+              <div aria-hidden className="pointer-events-none absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-background to-transparent md:hidden" />
+              <div aria-hidden className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-background to-transparent md:hidden" />
+
+              {/* scroll container */}
+              <div className="-mx-4 px-4 overflow-x-auto md:overflow-visible">
+                <div className="flex w-max md:w-full md:justify-center items-center gap-6 md:gap-10 whitespace-nowrap">
+                  {CATEGORIES.map((cat) => {
+                    const active = cat === activeCategory
+                    return (
+                      <Button
+                        key={cat}
+                        type="button"
+                        onClick={() => setActiveCategory(cat)}
+                        variant="ghost"
+                        className={[
+                          "relative px-1 pb-2 text-sm md:text-base transition-colors",
+                          "text-muted-foreground hover:text-foreground hover:bg-0",
+                          "shrink-0", // 👈 important so buttons don’t compress on mobile
+                          active ? "text-foreground" : "",
+                        ].join(" ")}
+                        aria-current={active ? "page" : undefined}
+                      >
+                        <span>{cat}</span>
+                        <span
+                          aria-hidden
+                          className={[
+                            "absolute left-0 right-0 -bottom-[1px] h-[2px] rounded-full transition-opacity",
+                            active ? "opacity-100 bg-foreground" : "opacity-0 bg-foreground",
+                          ].join(" ")}
+                        />
+                      </Button>
+                    )
+                  })}
+                </div>
               </div>
-            )}
+            </div>
+
+
+            {/* Prev | View Resume | Next row */}
+            <div className="mt-4 flex items-center justify-center text-xs tracking-[0.18em] uppercase text-white/70">
+              <button
+                type="button"
+                onClick={prev}
+                className="hover:text-white transition-colors uppercase duration-300"
+                aria-label="Previous"
+              >
+                Prev
+              </button>
+              <span className="mx-4 text-white/35">|</span>
+              <a
+                href="/gallery"
+                rel="noreferrer"
+                className="hover:text-white transition-colors uppercase duration-300"
+              >
+                View Gallery
+              </a>
+              <span className="mx-4 text-white/35">|</span>
+              <button
+                type="button"
+                onClick={next}
+                className="hover:text-white transition-colors uppercase duration-300"
+                aria-label="Next"
+              >
+                Next
+              </button>
+            </div>
           </div>
         </div>
-      )}
-    </main>
-  )
+
+        {/* Close button (top-right) */}
+        <div className="absolute top-4 right-4 z-[10000] pointer-events-auto">
+          <Button variant="ghost" size="icon" className="text-white hover:bg-white/10" onClick={close} aria-label="Close">
+            <X className="h-6 w-6" />
+          </Button>
+        </div>
+
+        {/* Side chevrons (optional; keep if you like) */}
+        <div className="absolute left-4 top-1/2 -translate-y-1/2 z-[10000] pointer-events-auto">
+          <Button variant="ghost" size="icon" className="text-white hover:bg-white/10" onClick={prev} aria-label="Previous">
+            <ChevronLeft className="h-7 w-7" />
+          </Button>
+        </div>
+
+        <div className="absolute right-4 top-1/2 -translate-y-1/2 z-[10000] pointer-events-auto">
+          <Button variant="ghost" size="icon" className="text-white hover:bg-white/10" onClick={next} aria-label="Next">
+            <ChevronRight className="h-7 w-7" />
+          </Button>
+        </div>
+
+        {/* Content */}
+        <div className="relative z-[9999] h-full w-full flex items-center justify-center pt-22 p-4 pointer-events-none">
+          {current.type === "image" ? (
+            <img
+              src={current.src || "/placeholder.svg"}
+              alt={current.alt}
+              className="max-w-full max-h-full object-contain select-none pointer-events-auto"
+              draggable={false}
+              onClick={(e) => e.stopPropagation()}
+            />
+          ) : (
+            <div className="w-full max-w-5xl aspect-video pointer-events-auto" onClick={(e) => e.stopPropagation()}>
+              {current.src.endsWith(".mp4") ? (
+                <video className="w-full h-full" controls playsInline>
+                  <source src={current.src} type="video/mp4" />
+                </video>
+              ) : (
+                <iframe
+                  className="w-full h-full"
+                  src={toEmbedUrl(current.src)}
+                  title={current.alt}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              )}
+            </div>
+          )}
+        </div>
+      </div>
+    )}
+  </main>
+)
 }
