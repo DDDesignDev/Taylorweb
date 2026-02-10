@@ -7,43 +7,54 @@ import { Button } from "@/components/ui/button"
 type MediaCategory = "Headshots" | "Theatre" | "Singing" | "Showreels"
 type MediaItem =
   | { id: number; category: MediaCategory; type: "image"; src: string; alt: string }
-  | { id: number; category: MediaCategory; type: "video"; src: string; alt: string } // src can be mp4 OR a YouTube/Vimeo URL
+  | { id: number; category: MediaCategory; type: "video"; src: string; alt: string } 
 
 const CATEGORIES: MediaCategory[] = ["Headshots", "Theatre", "Singing", "Showreels"]
 
-const RESUME_URL = "/Frisina Taylor Resume.pdf" // <- change to your real resume path
+const RESUME_URL = "/Frisina Taylor Resume.pdf" 
 
 const galleryItems: MediaItem[] = [
   // Headshots
-  { id: 1, category: "Headshots", type: "image", src: "/Headshot 1.jpg", alt: "Headshot 1" },
-  { id: 2, category: "Headshots", type: "image", src: "/Headshot 2.jpg", alt: "Headshot 2" },
-  { id: 3, category: "Headshots", type: "image", src: "/Headshot 3.jpg", alt: "Headshot 2" },
-  { id: 4, category: "Headshots", type: "image", src: "/Headshot 4.jpg", alt: "Headshot 2" },
-  { id: 5, category: "Headshots", type: "image", src: "/Headshot 5.jpg", alt: "Headshot 2" },
-  { id: 6, category: "Headshots", type: "image", src: "/Headshot 6.jpg", alt: "Headshot 2" },
-  { id: 7, category: "Headshots", type: "image", src: "/Headshot 7.jpg", alt: "Headshot 2" },
-  { id: 8, category: "Headshots", type: "image", src: "/Headshot 8.JPEG", alt: "Headshot 2" },
-  { id: 9, category: "Headshots", type: "image", src: "/Headshot 9.jpg", alt: "Headshot 2" },
-  { id: 10, category: "Headshots", type: "image", src: "/Headshot 10.JPEG", alt: "Headshot 2" },
-  { id: 11, category: "Headshots", type: "image", src: "/Headshot 11.JPEG", alt: "Headshot 2" },
+  { id: 1, category: "Headshots", type: "image", src: "/head1.jpg", alt: "head1" },
+  { id: 2, category: "Headshots", type: "image", src: "/head2.jpg", alt: "head2" },
+  { id: 3, category: "Headshots", type: "image", src: "/head3.jpg", alt: "head2" },
+  { id: 4, category: "Headshots", type: "image", src: "/head4.jpg", alt: "head2" },
+  { id: 5, category: "Headshots", type: "image", src: "/head5.jpg", alt: "head2" },
+  { id: 6, category: "Headshots", type: "image", src: "/head6.jpg", alt: "head2" },
+  { id: 7, category: "Headshots", type: "image", src: "/head7.jpg", alt: "head2" },
+  { id: 8, category: "Headshots", type: "image", src: "/head8.JPEG", alt: "head2" },
+  { id: 9, category: "Headshots", type: "image", src: "/head9.jpg", alt: "head2" },
+  { id: 10, category: "Headshots", type: "image", src: "/head10.JPEG", alt: "head2" },
+  { id: 11, category: "Headshots", type: "image", src: "/head11.JPEG", alt: "head2" },
+
+  { id: 12, category: "Theatre", type: "image", src: "/theatre/the1.jpg", alt: "head3" },
+  { id: 13, category: "Theatre", type: "image", src: "/theatre/the2.jpg", alt: "head3" },
+  { id: 14, category: "Theatre", type: "image", src: "/theatre/the3.jpg", alt: "head3" },
+  { id: 15, category: "Theatre", type: "image", src: "/singing/Candid Cabaret 1.jpg", alt: "head4" },
+  { id: 16, category: "Theatre", type: "image", src: "/singing/Candid Cabaret 2.jpg", alt: "head4" },
+  { id: 17, category: "Theatre", type: "image", src: "/singing/Candid Cabaret 3.jpg", alt: "head4" },
+  { id: 18, category: "Theatre", type: "image", src: "/singing/Candid Cabaret 4.jpg", alt: "head4" },
+  { id: 19, category: "Theatre", type: "image", src: "/singing/Candid Cabaret 5.jpg", alt: "head4" },
+  { id: 20, category: "Theatre", type: "image", src: "/singing/Candid Cabaret 6.jpg", alt: "head4" },
+  { id: 21, category: "Theatre", type: "image", src: "/singing/Candid Cabaret 7.jpg", alt: "head4" },
+  { id: 22, category: "Theatre", type: "image", src: "/singing/Candid Cabaret 8.jpg", alt: "head4" },
+  { id: 23, category: "Theatre", type: "image", src: "/singing/Candid Cabaret 9.jpg", alt: "head4" },
+  { id: 24, category: "Theatre", type: "image", src: "/singing/Candid Cabaret 10.jpg", alt: "head4" },
+  { id: 25, category: "Theatre", type: "image", src: "/singing/Candid Cabaret 11.jpg", alt: "head4" },
+  { id: 26, category: "Theatre", type: "image", src: "/singing/Candid Cabaret 12.jpg", alt: "head4" },
+  { id: 27, category: "Theatre", type: "image", src: "/singing/Candid Cabaret 13.jpg", alt: "head4" },
+  { id: 28, category: "Theatre", type: "image", src: "/singing/Candid Cabaret 14.jpg", alt: "head4" },
+  { id: 29, category: "Theatre", type: "image", src: "/singing/Candid Cabaret 15.jpg", alt: "head4" },
 
 
-  { id: 4, category: "Theatre", type: "image", src: "/theatre.jpg", alt: "Headshot 3" },
-  { id: 5, category: "Theatre", type: "image", src: "/theatre1.jpg", alt: "Headshot 3" },
-  { id: 6, category: "Theatre", type: "image", src: "/theatre2.jpg", alt: "Headshot 3" },
-
-  { id: 7, category: "Showreels", type: "image", src: "/Headshot 4.jpg", alt: "Headshot 4" },
-  { id: 8, category: "Showreels", type: "image", src: "/Headshot 5.jpg", alt: "Headshot 4" },
-  { id: 9, category: "Showreels", type: "image", src: "/Headshot 6.jpg", alt: "Headshot 4" },
   
-  { id: 10, category: "Singing", type: "image", src: "/Headshot 5.jpg", alt: "Headshot 5" },
-  { id: 11, category: "Singing", type: "image", src: "/Headshot 6.jpg", alt: "Headshot 6" },
-  { id: 12, category: "Singing", type: "image", src: "/Headshot 7.jpg", alt: "Headshot 7" },
+  // { id: 10, category: "Singing", type: "image", src: "/singing/sing1.jpg", alt: "head5" },
+  // { id: 11, category: "Singing", type: "image", src: "/singing/sing2.jpg", alt: "head6" },
+  // { id: 12, category: "Singing", type: "image", src: "/singing/sing3.jpg", alt: "head7" },
 
-  // Examples (add your real media)
-  // { id: 20, category: "Musical Theatre", type: "image", src: "/pippin-1.jpg", alt: "Pippin production still" },
-  // { id: 30, category: "Singing", type: "image", src: "/concert-1.jpg", alt: "Concert performance still" },
-  // { id: 40, category: "Showreels", type: "video", src: "https://www.youtube.com/watch?v=XXXX", alt: "Showreel" },
+  // { id: 13, category: "Showreels", type: "video", src: "https://www.youtube.com/embed/LGwIA9g910Y", alt: "head7" },
+  // { id: 14, category: "Showreels", type: "video", src: "https://youtube.com/embed/Xk8VB32uNgw", alt: "head7" },
+
 ]
 
 function isYouTube(url: string) {

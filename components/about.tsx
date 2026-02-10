@@ -75,7 +75,7 @@ export function About() {
             
           >
             <img
-              src="/Headshot 6.jpg"
+              src="/headshots/head4.JPEG"
               alt="Professional headshot"
               className="w-full h-full object-cover"
             />

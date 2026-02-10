@@ -3,7 +3,7 @@ export function AudioVideo() {
     <section id="showreel" className="py-24 md:py-32 relative">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl mb-4 header-font">Performances</h2>
+          <h2 className="text-4xl md:text-5xl mb-4 header-font">Reels and Demos</h2>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
@@ -14,7 +14,7 @@ export function AudioVideo() {
               <div className="aspect-video bg-muted overflow-hidden shadow-lg">
                 <iframe
                   className="w-full h-full"
-                  src="http://youtube.com/watch?v=Xk8VB32uNgw&feature=youtu.be"
+                  src="https://youtube.com/embed/Xk8VB32uNgw"
                   title="Performance Reel"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -23,7 +23,7 @@ export function AudioVideo() {
               <div className="aspect-video bg-muted overflow-hidden shadow-lg">
                 <iframe
                   className="w-full h-full"
-                  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                  src="https://www.youtube.com/embed/LGwIA9g910Y"
                   title="Behind the Scenes"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen

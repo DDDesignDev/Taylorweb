@@ -13,17 +13,17 @@ const CATEGORIES: MediaCategory[] = ["Headshots", "Theatre", "Singing"]
 
 const galleryItems: MediaItem[] = [
   // Headshots
-  { id: 1, category: "Headshots", type: "image", src: "/head3.jpg", alt: "Headshot 1" },
-  { id: 2, category: "Headshots", type: "image", src: "/head2.jpg", alt: "Headshot 2" },
-  { id: 3, category: "Headshots", type: "image", src: "/head1.jpg", alt: "Headshot 3" },
+  { id: 1, category: "Headshots", type: "image", src: "/headshots/head3.jpg", alt: "Headshot 1" },
+  { id: 2, category: "Headshots", type: "image", src: "/headshots/head2.jpg", alt: "Headshot 2" },
+  { id: 3, category: "Headshots", type: "image", src: "/headshots/head1.jpg", alt: "Headshot 3" },
 
-  { id: 4, category: "Theatre", type: "image", src: "/the1.jpg", alt: "Headshot 3" },
-  { id: 5, category: "Theatre", type: "image", src: "/the3.jpg", alt: "Headshot 3" },
-  { id: 6, category: "Theatre", type: "image", src: "/the2.jpg", alt: "Headshot 3" },
+  { id: 4, category: "Theatre", type: "image", src: "/theatre/the1.jpg", alt: "Theatre 1" },
+  { id: 5, category: "Theatre", type: "image", src: "/theatre/the3.jpg", alt: "Theatre 2" },
+  { id: 6, category: "Theatre", type: "image", src: "/theatre/the2.jpg", alt: "Theatre 3" },
   
-  { id: 10, category: "Singing", type: "image", src: "/sing2.jpg", alt: "Headshot 5" },
-  { id: 11, category: "Singing", type: "image", src: "/sing1.jpg", alt: "Headshot 6" },
-  { id: 12, category: "Singing", type: "image", src: "/sing3.jpg", alt: "Headshot 7" },
+  { id: 10, category: "Singing", type: "image", src: "/singing/sing2.jpg", alt: "Singing 1" },
+  { id: 11, category: "Singing", type: "image", src: "/singing/sing1.jpg", alt: "Singing 2" },
+  { id: 12, category: "Singing", type: "image", src: "/singing/sing3.jpg", alt: "Singing 3" },
 
   // Examples (add your real media)
   // { id: 20, category: "Musical Theatre", type: "image", src: "/pippin-1.jpg", alt: "Pippin production still" },

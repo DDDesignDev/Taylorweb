@@ -1,10 +1,10 @@
 import { Hero } from "@/components/hero"
 import { About } from "@/components/about"
 import { MediaGallery } from "@/components/media-gallery"
-import { Resume } from "@/components/resume"
 import { AudioVideo } from "@/components/audio-video"
 import { Contact } from "@/components/contact"
 import { Navigation } from "@/components/navigation"
+import Resume from "@/components/resume"
 
 export default function PortfolioPage() {
   return (
