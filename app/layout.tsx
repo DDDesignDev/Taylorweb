@@ -15,8 +15,8 @@ export const metadata: Metadata = {
     template: "%s | Taylor Frisina",
   },
   icons: {
-    icon: "/og/head1.jpg",
-    apple: "/og/head1.jpg",
+    icon: "icon.jpg",
+    apple: "icon.jpg",
   },
   description:
     "Official website of Taylor Frisina, a musical theatre performer and educator based in Hamilton and Toronto. Explore performance reels, gallery, and resume.",
@@ -40,6 +40,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     images: ["/og/head1.jpg"],
+  },
+    alternates: {
+    canonical: "/",
   },
 }
 

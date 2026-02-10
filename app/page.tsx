@@ -6,9 +6,9 @@ import Resume from "@/components/resume"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  alternates: {
-    canonical: "/",
-  },
+  title: "Home",
+  alternates: { canonical: "/" },
+  openGraph: { url: "/" },
 }
 
 export default function PortfolioPage() {
