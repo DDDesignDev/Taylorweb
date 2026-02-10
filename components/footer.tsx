@@ -54,7 +54,7 @@ export function Footer() {
 
             <div className="flex gap-3">
               <Button variant="ghost" size="icon" asChild>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://instagram.com/taylorfrisinaaa" target="_blank" rel="noopener noreferrer">
                   <Instagram className="h-5 w-5" />
                 </a>
               </Button>
@@ -69,7 +69,7 @@ export function Footer() {
                 </a>
               </Button>
               <Button variant="ghost" size="icon" asChild>
-                <a href="https://soundcloud.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://music.apple.com/profile/taylorfrisina" target="_blank" rel="noopener noreferrer">
                   <Music className="h-5 w-5" />
                 </a>
               </Button>

@@ -143,7 +143,7 @@ export function MediaGallery() {
             })}
           </div>
           <div className="mx-auto flex justify-center mb-8">
-            <Button className="">
+            <Button className="text-sm" variant="default">
               <a href="/gallery">View All</a>
             </Button>
           </div>

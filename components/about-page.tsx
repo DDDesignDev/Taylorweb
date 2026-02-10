@@ -232,7 +232,7 @@ export default function UseAboutPage() {
             </div>
 
 
-            <div className="p-8 md:p-10">
+            <div className="px-8 md:px-10">
               <h2 className="text-2xl md:text-3xl header-font">The Educator</h2>
               <p className="mt-4 text-muted-foreground leading-relaxed">
                 In addition to her work on stage, Taylor is an experienced educator and
@@ -252,7 +252,7 @@ export default function UseAboutPage() {
 
           {/* Right column */}
           <aside className="lg:col-span-5 space-y-6 ">
-            <div className="p-8">
+            <div className="p-8 md:p-10">
               <h3 className="text-xl font-semibold">At a Glance</h3>
 
               <dl className="mt-6 space-y-4 text-sm">
@@ -284,25 +284,23 @@ export default function UseAboutPage() {
                 <Button variant="outline" asChild>
                   <a
                     href="/gallery"
-                    className="border border-primary px-5 py-3 text-center text-sm font-medium text-primary hover:text-foreground hover:bg-black/40 transition"
                   >
                     View Gallery
                   </a>
                 </Button>
-                <Button variant="outline" asChild>
+                <Button variant="secondary" asChild>
                   <a
                     href="/Frisina Taylor Resume.pdf"
                     target="_blank"
                     rel="noreferrer"
-                    className="border border-primary px-5 py-3 text-center text-sm font-medium text-primary hover:text-foreground hover:bg-black/40 transition"
                   >
                     View Resume
                   </a>
                 </Button>
-                <Button variant="outline" className="hover" asChild>
+                <Button variant="default" asChild>
                   <a
-                    href="#contact"
-                    className="border border-primary bg-primary px-5 py-3 text-center text-sm font-medium text-background hover:text-foreground transition"
+                    href="/contact"
+                    rel="noreferrer"
                   >
                     Contact
                   </a>
@@ -311,7 +309,7 @@ export default function UseAboutPage() {
               </div>
             </div>
 
-            <div className=" p-8">
+            <div className="p-8 md:p-10">
               <h3 className="text-xl font-semibold">Statement</h3>
               <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
                 Taylor continues to refine her craft through ongoing training and is excited

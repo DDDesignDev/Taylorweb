@@ -78,7 +78,7 @@ export default function Resume() {
             viewport={{ once: true, amount: 0.6 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <h1 className="text-4xl md:text-6xl header-font">Resume & Credits</h1>
+            <h1 className="text-4xl md:text-5xl header-font">Resume & Credits</h1>
             <p className="mt-3 text-muted-foreground">
               Selected performance credits, teaching, training, and special skills.
             </p>
@@ -89,15 +89,14 @@ export default function Resume() {
                     href="/Frisina Taylor Resume.pdf"
                     target="_blank"
                     rel="noreferrer"
-                    className="border border-primary px-5 py-3 text-center text-sm font-medium text-primary hover:text-foreground hover:bg-black/40 transition"
+                    
                   >
                     View Resume
                   </a>
                 </Button>
-                <Button variant="outline" className="hover" asChild>
+                <Button variant="default" className="hover" asChild>
                   <a
                     href="#contact"
-                    className="border border-primary bg-primary px-5 py-3 text-center text-sm font-medium text-background hover:text-foreground transition"
                   >
                     Contact
                   </a>
