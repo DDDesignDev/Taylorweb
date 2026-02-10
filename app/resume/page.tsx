@@ -11,6 +11,9 @@ export const metadata: Metadata = {
       "Selected theatre, concert, and training credits for musical theatre performer Taylor Frisina.",
     url: "/resume",
   },
+  alternates: {
+    canonical: "/resume",
+  },
 }
 
 export default function ResumePage() {

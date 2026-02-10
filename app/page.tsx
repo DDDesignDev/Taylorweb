@@ -5,6 +5,12 @@ import { AudioVideo } from "@/components/audio-video"
 import Resume from "@/components/resume"
 import type { Metadata } from "next"
 
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+  },
+}
+
 export default function PortfolioPage() {
   return (
     <main className="min-h-screen">

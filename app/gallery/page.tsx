@@ -11,6 +11,9 @@ export const metadata: Metadata = {
       "Headshots, theatre photos, singing performances, and showreels featuring Taylor Frisina.",
     url: "/gallery",
   },
+  alternates: {
+    canonical: "/gallery",
+  },
 }
 
 export default function GalleryPage() {
