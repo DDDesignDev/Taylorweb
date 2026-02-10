@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     description:
       "Background, training, and artistic approach of musical theatre performer and educator Taylor Frisina.",
     url: "/about",
+    type: "website",
   },
   alternates: {
     canonical: "/about",

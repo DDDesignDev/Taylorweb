@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     description:
       "Selected theatre, concert, and training credits for musical theatre performer Taylor Frisina.",
     url: "/resume",
+    type: "website",
   },
   alternates: {
     canonical: "/resume",

@@ -6,9 +6,12 @@ import Resume from "@/components/resume"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Home",
   alternates: { canonical: "/" },
-  openGraph: { url: "/" },
+  openGraph: {
+    title: "Taylor Frisina | Musical Theatre Performer & Educator",
+    description: "…",
+    url: "/",
+  },
 }
 
 export default function PortfolioPage() {
