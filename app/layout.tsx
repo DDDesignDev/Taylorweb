@@ -5,31 +5,25 @@ import "./globals.css"
 import { Navigation } from "@/components/navigation"
 import { Contact } from "@/components/contact"
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://taylorportfolio-five.vercel.app"
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://taylorportfolio-five.vercel.app"), // ← update to real domain
+  metadataBase: new URL(siteUrl),
   title: {
-    default: "Taylor Frisina | Musical Theatre Performer & Educator",
+    default: "Taylor Frisina",
     template: "%s | Taylor Frisina",
   },
   description:
-    "Taylor Frisina is a Hamilton- and Toronto-based musical theatre performer, mezzo-soprano, and educator with international training and professional experience.",
-  keywords: [
-    "Taylor Frisina",
-    "musical theatre performer",
-    "mezzo soprano",
-    "theatre performer Canada",
-    "Toronto musical theatre",
-    "Hamilton musical theatre",
-    "vocal coach",
-    "choreographer",
-  ],
-  authors: [{ name: "Taylor Frisina" }],
-  creator: "Taylor Frisina",
+    "Official website of Taylor Frisina, a musical theatre performer and educator based in Hamilton and Toronto. Explore performance reels, gallery, and resume.",
   openGraph: {
     type: "website",
     locale: "en_CA",
     siteName: "Taylor Frisina",
+    url: siteUrl,
+    title: "Taylor Frisina | Musical Theatre Performer & Educator",
+    description:
+      "Explore performance reels, gallery, and professional credits for musical theatre performer Taylor Frisina.",
     images: [
       {
         url: "/og/head1.jpg",
@@ -43,11 +37,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     images: ["/og/head1.jpg"],
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
 }
+
 
 export default function RootLayout({
   children,
