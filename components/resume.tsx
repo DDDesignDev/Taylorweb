@@ -54,6 +54,18 @@ const blockVariants = {
   show: { opacity: 1, y: 0 },
 }
 
+const ease = [0.22, 1, 0.36, 1] as const
+
+const rightColumn = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.14, delayChildren: 0.05 } },
+}
+
+const slideInRight = {
+  hidden: { opacity: 0, x: 28 },
+  show: { opacity: 1, x: 0 },
+}
+
 export default function Resume() {
   return (
     <main className="min-h-screen bg-background text-foreground">
@@ -164,43 +176,62 @@ export default function Resume() {
             </motion.div>
 
             {/* RIGHT: Teaching / Training / Skills */}
-            <div className="lg:col-span-5 space-y-6 lg:sticky lg:top-24 h-fit">
-              <div className="p-7">
+            <motion.aside
+              className="lg:col-span-5 space-y-6 lg:sticky lg:top-24 h-fit"
+              variants={rightColumn}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.25 }}
+            >
+              <motion.div
+                variants={slideInRight}
+                className="p-7"
+                transition={{ duration: 0.7, ease }}
+              >
                 <h3 className="text-lg font-semibold">Teaching & Coaching</h3>
                 <ul className="mt-4 space-y-3 text-sm text-white/75">
                   {teaching.map((t) => (
                     <li key={t} className="flex gap-3">
-                      <span className="mt-[7px] h-1.5 w-1.5 " />
+                      <span className="mt-[7px] h-1.5 w-1.5 rounded-full bg-primary" />
                       <span>{t}</span>
                     </li>
                   ))}
                 </ul>
-              </div>
+              </motion.div>
 
-              <div className="p-7">
+              <motion.div
+                variants={slideInRight}
+                className="p-7"
+                transition={{ duration: 0.7, ease }}
+              >
                 <h3 className="text-lg font-semibold">Training & Education</h3>
                 <ul className="mt-4 space-y-3 text-sm text-white/75">
                   {training.map((t) => (
                     <li key={t} className="flex gap-3">
-                      <span className="mt-[7px] h-1.5 w-1.5 " />
+                      <span className="mt-[7px] h-1.5 w-1.5 rounded-full bg-primary" />
                       <span>{t}</span>
                     </li>
                   ))}
                 </ul>
-              </div>
+              </motion.div>
 
-              <div className="p-7">
+              <motion.div
+                variants={slideInRight}
+                transition={{ duration: 0.7, ease }}
+                className="p-7"
+              >
                 <h3 className="text-lg font-semibold">Special Skills</h3>
                 <ul className="mt-4 space-y-3 text-sm text-white/75">
                   {skills.map((s) => (
                     <li key={s} className="flex gap-3">
-                      <span className="mt-[7px] h-1.5 w-1.5 " />
+                      <span className="mt-[7px] h-1.5 w-1.5 rounded-full bg-primary" />
                       <span>{s}</span>
                     </li>
                   ))}
                 </ul>
-              </div>
-            </div>
+              </motion.div>
+            </motion.aside>
+
           </div>
         </div>
       </section>

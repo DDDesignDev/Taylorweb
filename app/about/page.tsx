@@ -17,7 +17,7 @@ const performancesLeft = [
   {
     show: "Into the Woods",
     role: "The Witch",
-    theatre: "Connect Theatre Project",
+    theatre: "Connect Theatre",
     director: "P. Penton",
     category: "Theatre",
   },
