@@ -14,6 +14,10 @@ export const metadata: Metadata = {
     default: "Taylor Frisina",
     template: "%s | Taylor Frisina",
   },
+  icons: {
+    icon: "/og/head1.jpg",
+    apple: "/og/head1.jpg",
+  },
   description:
     "Official website of Taylor Frisina, a musical theatre performer and educator based in Hamilton and Toronto. Explore performance reels, gallery, and resume.",
   openGraph: {
