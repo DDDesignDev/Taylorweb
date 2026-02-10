@@ -7,7 +7,7 @@ import { Contact } from "@/components/contact"
 
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://taylorfrisina.com"), // ← update to real domain
+  metadataBase: new URL("https://taylorportfolio-five.vercel.app"), // ← update to real domain
   title: {
     default: "Taylor Frisina | Musical Theatre Performer & Educator",
     template: "%s | Taylor Frisina",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     siteName: "Taylor Frisina",
     images: [
       {
-        url: "/headshots/head1.jpg",
+        url: "/og/head1.jpg",
         width: 1200,
         height: 630,
         alt: "Taylor Frisina – Musical Theatre Performer & Educator",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    images: ["/headshots/head1.jpg"],
+    images: ["/og/head1.jpg"],
   },
   robots: {
     index: true,
