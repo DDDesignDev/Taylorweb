@@ -1,4 +1,5 @@
 import Resume from "@/components/resume"
+import UseResumePage from "@/components/resume-page"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -19,6 +20,6 @@ export const metadata: Metadata = {
 
 export default function ResumePage() {
   return (
-    <Resume />
+    <UseResumePage />
   )
 }

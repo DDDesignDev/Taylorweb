@@ -26,7 +26,7 @@ const row = {
 
 export function AudioVideo() {
   return (
-    <section id="showreel" className="py-24 md:py-32 relative">
+    <section id="showreel" className="pt-24 md:pt-32 relative">
       <div className="container mx-auto px-4 max-w-6xl">
         {/* Header */}
         <motion.div

@@ -4,6 +4,7 @@ import { MediaGallery } from "@/components/media-gallery"
 import { AudioVideo } from "@/components/audio-video"
 import Resume from "@/components/resume"
 import type { Metadata } from "next"
+import { Contact } from "@/components/contact"
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
@@ -23,6 +24,7 @@ export default function PortfolioPage() {
         <About />
         <AudioVideo />
         <Resume />
+        <Contact />
       </div>
     </main>
   )

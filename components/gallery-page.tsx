@@ -176,7 +176,7 @@ export default function UseGalleryPage() {
 return (
   <main className="min-h-screen bg-background text-foreground">
     {/* Gallery Grid */}
-    <section id="gallery" className="py-24 md:py-28 bg-background relative">
+    <section id="gallery" className="py-24 md:py-28 relative">
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
           <h2 className="text-4xl md:text-6xl header-font">Media Gallery</h2>
@@ -225,7 +225,6 @@ return (
           </div>
         </div>
 
-        
 
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">

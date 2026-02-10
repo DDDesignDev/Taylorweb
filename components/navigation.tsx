@@ -9,7 +9,7 @@ const navLinks = [
   { href: "/gallery", label: "Gallery" },
   { href: "/#showreel", label: "Showreel" },
   { href: "/resume", label: "Resume" },
-  { href: "/#contact", label: "Contact" },
+  { href: "/contact", label: "Contact" },
 ]
 
 export function Navigation() {

@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import { Navigation } from "@/components/navigation"
 import { Contact } from "@/components/contact"
+import { Footer } from "@/components/footer"
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://taylorportfolio-five.vercel.app"
@@ -93,7 +94,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         {children}
-        <Contact />
+        <Footer />
         <Analytics />
       </body>
     </html>
