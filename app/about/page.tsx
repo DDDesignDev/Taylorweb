@@ -283,10 +283,10 @@ export default function AboutPage() {
               <div className="mt-8 flex flex-col gap-3">
                 <Button variant="outline" asChild>
                   <a
-                    href="/#gallery"
+                    href="/gallery"
                     className="border border-primary px-5 py-3 text-center text-sm font-medium text-primary hover:text-foreground hover:bg-black/40 transition"
                   >
-                    View Media
+                    View Gallery
                   </a>
                 </Button>
                 <Button variant="outline" asChild>

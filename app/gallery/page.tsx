@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 type MediaCategory = "Headshots" | "Theatre" | "Singing" | "Showreels"
 type MediaItem =
   | { id: number; category: MediaCategory; type: "image"; src: string; alt: string }
-  | { id: number; category: MediaCategory; type: "video"; src: string; alt: string } 
+  | { id: number; category: MediaCategory; type: "video"; src: string; alt: string; thumb?: string } 
 
 const CATEGORIES: MediaCategory[] = ["Headshots", "Theatre", "Singing", "Showreels"]
 
@@ -15,45 +15,54 @@ const RESUME_URL = "/Frisina Taylor Resume.pdf"
 
 const galleryItems: MediaItem[] = [
   // Headshots
-  { id: 1, category: "Headshots", type: "image", src: "/head1.jpg", alt: "head1" },
-  { id: 2, category: "Headshots", type: "image", src: "/head2.jpg", alt: "head2" },
-  { id: 3, category: "Headshots", type: "image", src: "/head3.jpg", alt: "head2" },
-  { id: 4, category: "Headshots", type: "image", src: "/head4.jpg", alt: "head2" },
-  { id: 5, category: "Headshots", type: "image", src: "/head5.jpg", alt: "head2" },
-  { id: 6, category: "Headshots", type: "image", src: "/head6.jpg", alt: "head2" },
-  { id: 7, category: "Headshots", type: "image", src: "/head7.jpg", alt: "head2" },
-  { id: 8, category: "Headshots", type: "image", src: "/head8.JPEG", alt: "head2" },
-  { id: 9, category: "Headshots", type: "image", src: "/head9.jpg", alt: "head2" },
-  { id: 10, category: "Headshots", type: "image", src: "/head10.JPEG", alt: "head2" },
-  { id: 11, category: "Headshots", type: "image", src: "/head11.JPEG", alt: "head2" },
+  { id: 1, category: "Headshots", type: "image", src: "/headshots/head10.jpg", alt: "head1" },
+  { id: 2, category: "Headshots", type: "image", src: "/headshots/head2.jpg", alt: "head2" },
+  { id: 3, category: "Headshots", type: "image", src: "/headshots/head11.jpg", alt: "head2" },
+
+  { id: 4, category: "Headshots", type: "image", src: "/headshots/head3.jpg", alt: "head2" },
+  { id: 5, category: "Headshots", type: "image", src: "/headshots/head5.jpg", alt: "head2" },
+  { id: 6, category: "Headshots", type: "image", src: "/headshots/head14.jpg", alt: "head2" },
+
+  { id: 7, category: "Headshots", type: "image", src: "/headshots/head13.jpg", alt: "head2" },
+  { id: 8, category: "Headshots", type: "image", src: "/headshots/head15.jpg", alt: "head2" },
+  { id: 9, category: "Headshots", type: "image", src: "/headshots/head9.jpg", alt: "head2" },
+
+  { id: 10, category: "Headshots", type: "image", src: "/headshots/head1.jpg", alt: "head2" },
+  { id: 11, category: "Headshots", type: "image", src: "/headshots/head6.jpg", alt: "head2" },
+  { id: 12, category: "Headshots", type: "image", src: "/headshots/head12.jpg", alt: "head2" },
+
+  { id: 13, category: "Headshots", type: "image", src: "/headshots/head8.jpg", alt: "head2" },
+  { id: 14, category: "Headshots", type: "image", src: "/headshots/head7.jpg", alt: "head2" },
+  { id: 15, category: "Headshots", type: "image", src: "/headshots/head4.JPEG", alt: "head2" },
 
   { id: 12, category: "Theatre", type: "image", src: "/theatre/the1.jpg", alt: "head3" },
   { id: 13, category: "Theatre", type: "image", src: "/theatre/the2.jpg", alt: "head3" },
   { id: 14, category: "Theatre", type: "image", src: "/theatre/the3.jpg", alt: "head3" },
-  { id: 15, category: "Theatre", type: "image", src: "/singing/Candid Cabaret 1.jpg", alt: "head4" },
-  { id: 16, category: "Theatre", type: "image", src: "/singing/Candid Cabaret 2.jpg", alt: "head4" },
-  { id: 17, category: "Theatre", type: "image", src: "/singing/Candid Cabaret 3.jpg", alt: "head4" },
-  { id: 18, category: "Theatre", type: "image", src: "/singing/Candid Cabaret 4.jpg", alt: "head4" },
-  { id: 19, category: "Theatre", type: "image", src: "/singing/Candid Cabaret 5.jpg", alt: "head4" },
-  { id: 20, category: "Theatre", type: "image", src: "/singing/Candid Cabaret 6.jpg", alt: "head4" },
-  { id: 21, category: "Theatre", type: "image", src: "/singing/Candid Cabaret 7.jpg", alt: "head4" },
-  { id: 22, category: "Theatre", type: "image", src: "/singing/Candid Cabaret 8.jpg", alt: "head4" },
-  { id: 23, category: "Theatre", type: "image", src: "/singing/Candid Cabaret 9.jpg", alt: "head4" },
-  { id: 24, category: "Theatre", type: "image", src: "/singing/Candid Cabaret 10.jpg", alt: "head4" },
-  { id: 25, category: "Theatre", type: "image", src: "/singing/Candid Cabaret 11.jpg", alt: "head4" },
-  { id: 26, category: "Theatre", type: "image", src: "/singing/Candid Cabaret 12.jpg", alt: "head4" },
-  { id: 27, category: "Theatre", type: "image", src: "/singing/Candid Cabaret 13.jpg", alt: "head4" },
-  { id: 28, category: "Theatre", type: "image", src: "/singing/Candid Cabaret 14.jpg", alt: "head4" },
-  { id: 29, category: "Theatre", type: "image", src: "/singing/Candid Cabaret 15.jpg", alt: "head4" },
 
+  { id: 15, category: "Singing", type: "image", src: "/singing/Candid Cabaret 1.jpg", alt: "head4" },
+  { id: 16, category: "Singing", type: "image", src: "/singing/Candid Cabaret 2.jpg", alt: "head4" },
+  { id: 17, category: "Singing", type: "image", src: "/singing/Candid Cabaret 3.jpg", alt: "head4" },
+  { id: 18, category: "Singing", type: "image", src: "/singing/Candid Cabaret 4.jpg", alt: "head4" },
+  { id: 19, category: "Singing", type: "image", src: "/singing/Candid Cabaret 5.jpg", alt: "head4" },
+  { id: 20, category: "Singing", type: "image", src: "/singing/Candid Cabaret 6.jpg", alt: "head4" },
+  { id: 21, category: "Singing", type: "image", src: "/singing/Candid Cabaret 7.jpg", alt: "head4" },
+  { id: 22, category: "Singing", type: "image", src: "/singing/Candid Cabaret 8.jpg", alt: "head4" },
+  { id: 23, category: "Singing", type: "image", src: "/singing/Candid Cabaret 9.jpg", alt: "head4" },
+  { id: 24, category: "Singing", type: "image", src: "/singing/Candid Cabaret 10.jpg", alt: "head4" },
+  { id: 25, category: "Singing", type: "image", src: "/singing/Candid Cabaret 11.jpg", alt: "head4" },
+  { id: 26, category: "Singing", type: "image", src: "/singing/Candid Cabaret 12.jpg", alt: "head4" },
+  { id: 27, category: "Singing", type: "image", src: "/singing/Candid Cabaret 13.jpg", alt: "head4" },
+  { id: 28, category: "Singing", type: "image", src: "/singing/Candid Cabaret 14.jpg", alt: "head4" },
+  { id: 29, category: "Theatre", type: "image", src: "/theatre/Edges 2.jpg", alt: "head4" },
+  { id: 30, category: "Theatre", type: "image", src: "/theatre/Edges 3.jpg", alt: "head4" },
+  { id: 31, category: "Theatre", type: "image", src: "/theatre/Edges 4.jpg", alt: "head4" },
+  { id: 32, category: "Theatre", type: "image", src: "/theatre/Edges 6.jpg", alt: "head4" },
+  { id: 33, category: "Theatre", type: "image", src: "/theatre/Edges 7.jpg", alt: "head4" },
+  { id: 34, category: "Theatre", type: "image", src: "/theatre/Edges 15.jpg", alt: "head4" },
+  { id: 35, category: "Theatre", type: "image", src: "/theatre/Pippin 4.jpg", alt: "head4" },
 
-  
-  // { id: 10, category: "Singing", type: "image", src: "/singing/sing1.jpg", alt: "head5" },
-  // { id: 11, category: "Singing", type: "image", src: "/singing/sing2.jpg", alt: "head6" },
-  // { id: 12, category: "Singing", type: "image", src: "/singing/sing3.jpg", alt: "head7" },
-
-  // { id: 13, category: "Showreels", type: "video", src: "https://www.youtube.com/embed/LGwIA9g910Y", alt: "head7" },
-  // { id: 14, category: "Showreels", type: "video", src: "https://youtube.com/embed/Xk8VB32uNgw", alt: "head7" },
+  { id: 13, category: "Showreels", type: "video", src: "https://www.youtube.com/embed/LGwIA9g910Y", alt: "Acting Reel" },
+  { id: 14, category: "Showreels", type: "video", src: "https://youtube.com/embed/Xk8VB32uNgw", alt: "Vocal Reel" },
 
 ]
 
@@ -62,6 +71,39 @@ function isYouTube(url: string) {
 }
 function isVimeo(url: string) {
   return /vimeo\.com/.test(url)
+}
+
+function getYouTubeId(url: string) {
+  try {
+    // supports: https://www.youtube.com/embed/ID
+    if (url.includes("/embed/")) return url.split("/embed/")[1]?.split(/[?&]/)[0]
+
+    // supports: https://youtu.be/ID
+    if (url.includes("youtu.be/")) return url.split("youtu.be/")[1]?.split(/[?&]/)[0]
+
+    // supports: https://www.youtube.com/watch?v=ID
+    const u = new URL(url)
+    const v = u.searchParams.get("v")
+    if (v) return v
+
+    return null
+  } catch {
+    return null
+  }
+}
+
+function getVideoThumb(item: MediaItem) {
+  if (item.type !== "video") return null
+
+  // If you manually provided a thumb, use it
+  if (item.thumb) return item.thumb
+
+  // Auto YouTube thumbnails
+  const id = getYouTubeId(item.src)
+  if (id) return `https://img.youtube.com/vi/${id}/hqdefault.jpg`
+
+  // Vimeo thumbnails require an API call; easiest is to provide thumb manually
+  return null
 }
 
 function toEmbedUrl(url: string) {
@@ -131,12 +173,15 @@ export default function GalleryPage() {
 
   const current = selectedIndex !== null ? filteredItems[selectedIndex] : null
 return (
-    <>
+    <main className="min-h-screen bg-background text-foreground">
       {/* Gallery Grid */}
-      <section id="gallery" className="py-10 md:py-12 bg-background relative">
+      <section id="gallery" className="py-24 md:py-28 bg-background relative">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10">
-            <h2 className="text-4xl md:text-5xl mb-4 header-font">Media Gallery</h2>
+            <h2 className="text-4xl md:text-6xl header-font">Media Gallery</h2>
+            <p className="mt-3 text-muted-foreground">
+              Take a look at some of my headshots, theatre performances, singing engagements, and showreels.
+            </p>
           </div>
 
           {/* Tabs */}
@@ -168,11 +213,7 @@ return (
               )
             })}
           </div>
-          <div className="mx-auto flex justify-center mb-8">
-            <Button className="">
-              <a href="/gallery">View All</a>
-            </Button>
-          </div>
+          
 
           {/* Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
@@ -190,8 +231,25 @@ return (
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                 ) : (
-                  <div className="w-full h-full flex items-center justify-center bg-black/10">
-                    <span className="text-sm text-muted-foreground">Video</span>
+                  <div className="relative w-full h-full">
+                    {getVideoThumb(item) ? (
+                      <img
+                        src={getVideoThumb(item) || "/placeholder.svg"}
+                        alt={`${item.alt} thumbnail`}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center bg-black/10">
+                        <span className="text-sm text-muted-foreground">Video</span>
+                      </div>
+                    )}
+
+                    {/* Play icon overlay */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="rounded-full border border-white/20 bg-black/40 backdrop-blur px-5 py-4">
+                        <span className="text-white/90 text-sm tracking-wide">Play</span>
+                      </div>
+                    </div>
                   </div>
                 )}
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300" />
@@ -327,6 +385,6 @@ return (
           </div>
         </div>
       )}
-    </>
+    </main>
   )
 }

@@ -49,7 +49,7 @@ export function Hero() {
         >
           <a
             href="#about"
-            className="group flex flex-col items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
+            className="relative top-[25vh] group flex flex-col items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
           >
             <span className="text-[10px] uppercase tracking-[0.3em]">
               Scroll
