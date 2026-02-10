@@ -18,11 +18,11 @@ const galleryItems: MediaItem[] = [
   { id: 3, category: "Headshots", type: "image", src: "/headshots/head1.jpg", alt: "Headshot 3" },
 
   { id: 4, category: "Theatre", type: "image", src: "/theatre/the1.jpg", alt: "Theatre 1" },
-  { id: 5, category: "Theatre", type: "image", src: "/theatre/the3.jpg", alt: "Theatre 2" },
-  { id: 6, category: "Theatre", type: "image", src: "/theatre/the2.jpg", alt: "Theatre 3" },
+  { id: 5, category: "Theatre", type: "image", src: "/theatre/the3.JPG", alt: "Theatre 2" },
+  { id: 6, category: "Theatre", type: "image", src: "/theatre/the2.JPG", alt: "Theatre 3" },
   
-  { id: 10, category: "Singing", type: "image", src: "/singing/sing2.jpg", alt: "Singing 1" },
-  { id: 11, category: "Singing", type: "image", src: "/singing/sing1.jpg", alt: "Singing 2" },
+  { id: 10, category: "Singing", type: "image", src: "/singing/sing2.JPG", alt: "Singing 1" },
+  { id: 11, category: "Singing", type: "image", src: "/singing/sing1.JPG", alt: "Singing 2" },
   { id: 12, category: "Singing", type: "image", src: "/singing/sing3.jpg", alt: "Singing 3" },
 
   // Examples (add your real media)
