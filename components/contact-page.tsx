@@ -187,10 +187,10 @@ export function UseContactPage() {
                   <div className="flex items-center justify-between gap-4">
                     <span className="text-muted-foreground">Email</span>
                     <a
-                      href="mailto:taylorfrisina@gmail.com"
+                      href="mailto:taylorfrisinaa@gmail.com"
                       className="underline underline-offset-4 hover:text-foreground"
                     >
-                      taylorfrisina@gmail.com
+                      taylorfrisinaa@gmail.com
                     </a>
                   </div>
 
@@ -220,11 +220,16 @@ export function UseContactPage() {
                     <a href="https://instagram.com/taylorfrisinaaa" target="_blank" rel="noreferrer">Instagram</a>
                   </Button>
                   <Button variant="outline" asChild>
-                    <a href="https://youtube.com" target="_blank" rel="noreferrer">YouTube</a>
+                    <a href="https://www.youtube.com/channel/UCEFvtilqtOi8TSWPBRvqVmA" target="_blank" rel="noreferrer">YouTube</a>
                   </Button>
                   <Button variant="outline" asChild>
-                    <a href="https://linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+                    <a href="https://www.facebook.com/taylor.frisina.7/" target="_blank" rel="noopener noreferrer">Facbook</a>
                   </Button>
+                  <Button variant="outline" asChild>
+                    <a href="https://music.apple.com/profile/taylorfrisina" target="_blank" rel="noreferrer">Apple Music</a>
+                  </Button>
+                  
+                  
                 </div>
               </div>
             </aside>

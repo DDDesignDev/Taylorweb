@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Instagram, Youtube, Linkedin, Music, Mail, MapPin } from "lucide-react"
+import { Instagram, Youtube, Linkedin, Music, Mail, MapPin, Facebook } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export function Footer() {
@@ -28,7 +28,7 @@ export function Footer() {
                 href="mailto:taylorfrisina@gmail.com"
                 className="hover:underline text-muted-foreground"
               >
-                taylorfrisina@gmail.com
+                taylorfrisinaa@gmail.com
               </a>
             </div>
           </div>
@@ -59,13 +59,13 @@ export function Footer() {
                 </a>
               </Button>
               <Button variant="ghost" size="icon" asChild>
-                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.youtube.com/channel/UCEFvtilqtOi8TSWPBRvqVmA" target="_blank" rel="noopener noreferrer">
                   <Youtube className="h-5 w-5" />
                 </a>
               </Button>
               <Button variant="ghost" size="icon" asChild>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                  <Linkedin className="h-5 w-5" />
+                <a href="https://www.facebook.com/taylor.frisina.7/" target="_blank" rel="noopener noreferrer">
+                  <Facebook className="h-5 w-5" />
                 </a>
               </Button>
               <Button variant="ghost" size="icon" asChild>

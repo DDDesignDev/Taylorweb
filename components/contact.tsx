@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { useState } from "react"
-import { Instagram, Youtube, Linkedin, Music, Mail, Ruler, Pin, Phone } from "lucide-react"
+import { Instagram, Youtube, Linkedin, Music, Mail, Ruler, Pin, Phone, Facebook } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -85,25 +85,25 @@ export function Contact() {
 
           {/* Contact Info & Social */}
           <div className="space-y-8 flex flex-col items-center text-center">
-            <h3 className="text-sm text-muted-foreground mb-4">taylorfrisina@gmail.com</h3>
+            <h3 className="text-sm text-muted-foreground mb-4">taylorfrisinaa@gmail.com</h3>
             <div className="flex gap-4 text-muted-foreground">
               <Button variant="ghost" size="icon" asChild>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://instagram.com/taylorfrisinaaa" target="_blank" rel="noopener noreferrer">
                   <Instagram className="h-5 w-5" />
                 </a>
               </Button>
               <Button variant="ghost" size="icon" asChild>
-                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.youtube.com/channel/UCEFvtilqtOi8TSWPBRvqVmA" target="_blank" rel="noopener noreferrer">
                   <Youtube className="h-5 w-5" />
                 </a>
               </Button>
               <Button variant="ghost" size="icon" asChild>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                  <Linkedin className="h-5 w-5" />
+                <a href="https://www.facebook.com/taylor.frisina.7/" target="_blank" rel="noopener noreferrer">
+                  <Facebook className="h-5 w-5" />
                 </a>
               </Button>
               <Button variant="ghost" size="icon" asChild>
-                <a href="https://soundcloud.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://music.apple.com/profile/taylorfrisina" target="_blank" rel="noopener noreferrer">
                   <Music className="h-5 w-5" />
                 </a>
               </Button>
