@@ -2,11 +2,12 @@
 
 import type React from "react"
 
-import { useState } from "react"
-import { Instagram, Youtube, Linkedin, Music, Mail, Ruler, Pin, Phone, Facebook } from "lucide-react"
+import { useMemo, useState } from "react"
+import { Instagram, Youtube, Music, Ruler, Facebook } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import { sendContact } from "@/lib/sendContact"
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -14,12 +15,32 @@ export function Contact() {
     email: "",
     message: "",
   })
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle form submission
-    console.log("Form submitted:", formData)
-  }
+  const ts = useMemo(() => Date.now(), []);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError(null);
+    setStatus("sending");
+
+    try {
+      await sendContact({
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        message: formData.message.trim(),
+        ts,
+        company_website: "", // honeypot optional
+      });
+
+      setStatus("sent");
+      setFormData({ name: "", email: "", message: "" });
+    } catch (err: any) {
+      setStatus("error");
+      setError(err?.message ?? "Something went wrong.");
+    }
+  };
 
   return (
     <section id="contact" className=" md:py-2 relative pb-12">
@@ -76,9 +97,21 @@ export function Contact() {
                 />
               </div>
               <div className="w-full text-center">
-                <Button type="submit" className="w-[200px] md:w-lg rounded-none" variant={"outline"}>
-                  Send Message
+                <Button
+                  type="submit"
+                  className="w-[200px] md:w-lg rounded-none"
+                  variant={"outline"}
+                  disabled={status === "sending"}
+                >
+                  {status === "sending" ? "Sending…" : "Send Message"}
                 </Button>
+
+                {status === "sent" && (
+                  <p className="mt-3 text-sm text-green-600">Thanks — your message was sent!</p>
+                )}
+                {status === "error" && (
+                  <p className="mt-3 text-sm text-red-600">{error ?? "Failed to send."}</p>
+                )}
               </div>
             </form>
           </div>

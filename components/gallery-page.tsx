@@ -6,8 +6,8 @@ import { Button } from "@/components/ui/button"
 
 type MediaCategory = "Headshots" | "Theatre" | "Singing" | "Showreels"
 type MediaItem =
-  | { id: number; category: MediaCategory; type: "image"; src: string; alt: string }
-  | { id: number; category: MediaCategory; type: "video"; src: string; alt: string; thumb?: string } 
+  | { id: number; category: MediaCategory; type: "image"; src: string; alt: string; credit?: string }
+  | { id: number; category: MediaCategory; type: "video"; src: string; alt: string; thumb?: string; credit?: string }
 
 const CATEGORIES: MediaCategory[] = ["Headshots", "Theatre", "Singing", "Showreels"]
 
@@ -15,85 +15,90 @@ const RESUME_URL = "/Frisina Taylor Resume.pdf"
 
 const galleryItems: MediaItem[] = [
   // Headshots
-  { id: 1, category: "Headshots", type: "image", src: "/headshots/head10.jpg", alt: "head1" },
-  { id: 2, category: "Headshots", type: "image", src: "/headshots/head2.jpg", alt: "head2" },
-  { id: 3, category: "Headshots", type: "image", src: "/headshots/head11.jpg", alt: "head2" },
+  { id: 1, category: "Headshots", type: "image", src: "/headshots/head10.jpg", alt: "head1", credit: "Marrisa Sattimi" },
+  { id: 2, category: "Headshots", type: "image", src: "/headshots/head2.jpg", alt: "head2", credit: "Marrisa Sattimi" },
+  { id: 3, category: "Headshots", type: "image", src: "/headshots/head11.jpg", alt: "head2", credit: "Marrisa Sattimi" },
 
-  { id: 4, category: "Headshots", type: "image", src: "/headshots/head3.jpg", alt: "head2" },
-  { id: 5, category: "Headshots", type: "image", src: "/headshots/head5.jpg", alt: "head2" },
-  { id: 6, category: "Headshots", type: "image", src: "/headshots/head14.jpg", alt: "head2" },
+  { id: 4, category: "Headshots", type: "image", src: "/headshots/head3.jpg", alt: "head2", credit: "Marrisa Sattimi" },
+  { id: 5, category: "Headshots", type: "image", src: "/headshots/head5.jpg", alt: "head2", credit: "Marrisa Sattimi" },
+  { id: 6, category: "Headshots", type: "image", src: "/headshots/head14.jpg", alt: "head2", credit: "Marrisa Sattimi" },
 
-  { id: 7, category: "Headshots", type: "image", src: "/headshots/head13.jpg", alt: "head2" },
-  { id: 8, category: "Headshots", type: "image", src: "/headshots/head15.jpg", alt: "head2" },
-  { id: 9, category: "Headshots", type: "image", src: "/headshots/head9.jpg", alt: "head2" },
+  { id: 7, category: "Headshots", type: "image", src: "/headshots/head13.jpg", alt: "head2", credit: "Marrisa Sattimi" },
+  { id: 8, category: "Headshots", type: "image", src: "/headshots/head15.jpg", alt: "head2", credit: "Marrisa Sattimi" },
+  { id: 9, category: "Headshots", type: "image", src: "/headshots/head9.jpg", alt: "head2", credit: "Marrisa Sattimi" },
 
-  { id: 10, category: "Headshots", type: "image", src: "/headshots/head1.jpg", alt: "head2" },
-  { id: 11, category: "Headshots", type: "image", src: "/headshots/head6.jpg", alt: "head2" },
-  { id: 12, category: "Headshots", type: "image", src: "/headshots/head12.jpg", alt: "head2" },
+  { id: 10, category: "Headshots", type: "image", src: "/headshots/head1.jpg", alt: "head2", credit: "Marrisa Sattimi" },
+  { id: 11, category: "Headshots", type: "image", src: "/headshots/head6.jpg", alt: "head2", credit: "Marrisa Sattimi" },
+  { id: 12, category: "Headshots", type: "image", src: "/headshots/head12.jpg", alt: "head2", credit: "Marrisa Sattimi" },
 
-  { id: 13, category: "Headshots", type: "image", src: "/headshots/head8.jpg", alt: "head2" },
-  { id: 14, category: "Headshots", type: "image", src: "/headshots/head7.jpg", alt: "head2" },
-  { id: 15, category: "Headshots", type: "image", src: "/headshots/head4.JPEG", alt: "head2" },
+  { id: 13, category: "Headshots", type: "image", src: "/headshots/head8.jpg", alt: "head2", credit: "Marrisa Sattimi" },
+  { id: 14, category: "Headshots", type: "image", src: "/headshots/head7.jpg", alt: "head2", credit: "Marrisa Sattimi" },
+  { id: 15, category: "Headshots", type: "image", src: "/headshots/head4.JPEG", alt: "head2", credit: "Marrisa Sattimi" },
 
-  { id: 1, category: "Theatre", type: "image", src: "/theatre/the1.jpg", alt: "head3" },
-  { id: 2, category: "Theatre", type: "image", src: "/theatre/the2.JPG", alt: "head3" },
-  { id: 3, category: "Theatre", type: "image", src: "/theatre/the3.JPG", alt: "head3" },
-  { id: 4, category: "Theatre", type: "image", src: "/theatre/Edges 1.JPG", alt: "head4" },
-  { id: 5, category: "Theatre", type: "image", src: "/theatre/Edges 2.JPG", alt: "head4" },
-  { id: 6, category: "Theatre", type: "image", src: "/theatre/Edges 3.JPG", alt: "head4" },
-  { id: 7, category: "Theatre", type: "image", src: "/theatre/Edges 4.JPG", alt: "head4" },
-  { id: 8, category: "Theatre", type: "image", src: "/theatre/Edges 5.JPG", alt: "head4" },
-  { id: 9, category: "Theatre", type: "image", src: "/theatre/Edges 6.JPG", alt: "head4" },
-  { id: 10, category: "Theatre", type: "image", src: "/theatre/Edges 7.JPG", alt: "head4" },
-  { id: 11, category: "Theatre", type: "image", src: "/theatre/Edges 12.JPG", alt: "head4" },
-  { id: 12, category: "Theatre", type: "image", src: "/theatre/Edges 13.JPG", alt: "head4" },
-  { id: 13, category: "Theatre", type: "image", src: "/theatre/Edges 14.JPG", alt: "head4" },
-  { id: 14, category: "Theatre", type: "image", src: "/theatre/Edges 17.JPG", alt: "head4" },
-  { id: 15, category: "Theatre", type: "image", src: "/theatre/image-34.JPG", alt: "head4" },
-  { id: 16, category: "Theatre", type: "image", src: "/theatre/image-35.JPG", alt: "head4" },
-  { id: 17, category: "Theatre", type: "image", src: "/theatre/image-63.jpg", alt: "head4" },
-  { id: 18, category: "Theatre", type: "image", src: "/theatre/image-64.jpg", alt: "head4" },
-  { id: 19, category: "Theatre", type: "image", src: "/theatre/image-65.jpg", alt: "head4" },
-  { id: 20, category: "Theatre", type: "image", src: "/theatre/image-95.jpg", alt: "head4" },
-  { id: 21, category: "Theatre", type: "image", src: "/theatre/image-157.jpg", alt: "head4" },
-  { id: 22, category: "Theatre", type: "image", src: "/theatre/image-159.jpg", alt: "head4" },
-  { id: 23, category: "Theatre", type: "image", src: "/theatre/image-182.jpg", alt: "head4" },
-  { id: 24, category: "Theatre", type: "image", src: "/theatre/image-183.jpg", alt: "head4" },
-  { id: 25, category: "Theatre", type: "image", src: "/theatre/image-185.jpg", alt: "head4" },
-  { id: 26, category: "Theatre", type: "image", src: "/theatre/image-209.jpg", alt: "head4" },
-  { id: 27, category: "Theatre", type: "image", src: "/theatre/image-212.jpg", alt: "head4" },
-  { id: 28, category: "Theatre", type: "image", src: "/theatre/Matilda 2.jpeg", alt: "head4" },
-  { id: 29, category: "Theatre", type: "image", src: "/theatre/Matilda 3.jpeg", alt: "head4" },
-  { id: 30, category: "Theatre", type: "image", src: "/theatre/Peter 2.JPG", alt: "head4" },
-  { id: 31, category: "Theatre", type: "image", src: "/theatre/Peter 3.JPG", alt: "head4" },
-  { id: 32, category: "Theatre", type: "image", src: "/theatre/Peter 4.JPG", alt: "head4" },
-  { id: 33, category: "Theatre", type: "image", src: "/theatre/Peter 5.JPG", alt: "head4" },
-  { id: 34, category: "Theatre", type: "image", src: "/theatre/Peter 6.JPG", alt: "head4" },
-  { id: 35, category: "Theatre", type: "image", src: "/theatre/Peter 7.JPG", alt: "head4" },
-  { id: 36, category: "Theatre", type: "image", src: "/theatre/Peter 8.JPG", alt: "head4" },
-  { id: 37, category: "Theatre", type: "image", src: "/theatre/Peter 9.JPG", alt: "head4" },
-  { id: 38, category: "Theatre", type: "image", src: "/theatre/Peter 11.JPG", alt: "head4" },
-  { id: 39, category: "Theatre", type: "image", src: "/theatre/Pippin 1.jpg", alt: "head4" },
-  { id: 40, category: "Theatre", type: "image", src: "/theatre/Pippin 3.jpg", alt: "head4" },
-  { id: 41, category: "Theatre", type: "image", src: "/theatre/Pippin 5.JPG", alt: "head4" },
-  { id: 42, category: "Theatre", type: "image", src: "/theatre/Pippin 22.JPG", alt: "head4" },
-  { id: 43, category: "Theatre", type: "image", src: "/theatre/Pippin 25.JPG", alt: "head4" },
-  { id: 44, category: "Theatre", type: "image", src: "/theatre/Seaussical 4.jpeg", alt: "head4" },
-  { id: 45, category: "Theatre", type: "image", src: "/theatre/Seussical 2.jpeg", alt: "head4" },
-  { id: 46, category: "Theatre", type: "image", src: "/theatre/Fringe 1.JPG", alt: "head4" },
-  { id: 47, category: "Theatre", type: "image", src: "/theatre/Sondheim Project 2.jpeg", alt: "head4" },
-  { id: 48, category: "Theatre", type: "image", src: "/theatre/Sondheim Project 6.jpeg", alt: "head4" },
 
-  { id: 1, category: "Singing", type: "image", src: "/singing/Candid Cabaret 1.JPG", alt: "head4" },
-  { id: 2, category: "Singing", type: "image", src: "/singing/Candid Cabaret 3.JPG", alt: "head4" },
-  { id: 3, category: "Singing", type: "image", src: "/singing/Candid Cabaret 6.JPG", alt: "head4" },
-  { id: 4, category: "Singing", type: "image", src: "/singing/Candid Cabaret 10.JPG", alt: "head4" },
-  { id: 5, category: "Singing", type: "image", src: "/singing/Candid Cabaret 12.JPG", alt: "head4" },
-  { id: 6, category: "Singing", type: "image", src: "/singing/sing2.JPG", alt: "head4" },
-  { id: 7, category: "Singing", type: "image", src: "/singing/sing3.JPG", alt: "head4" },
+  { id: 1, category: "Theatre", type: "image", src: "/theatre/the1.jpg", alt: "head3", credit: "Marrisa Sattimi" },
+  { id: 2, category: "Theatre", type: "image", src: "/theatre/the2.JPG", alt: "head3", credit: "Marrisa Sattimi" },
+  { id: 3, category: "Theatre", type: "image", src: "/theatre/the3.JPG", alt: "head3", credit: "Marrisa Sattimi" },
+  { id: 4, category: "Theatre", type: "image", src: "/theatre/Edges 1.JPG", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 5, category: "Theatre", type: "image", src: "/theatre/Edges 2.JPG", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 6, category: "Theatre", type: "image", src: "/theatre/Edges 3.JPG", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 7, category: "Theatre", type: "image", src: "/theatre/Edges 4.JPG", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 8, category: "Theatre", type: "image", src: "/theatre/Edges 5.JPG", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 9, category: "Theatre", type: "image", src: "/theatre/Edges 6.JPG", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 10, category: "Theatre", type: "image", src: "/theatre/Edges 7.JPG", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 11, category: "Theatre", type: "image", src: "/theatre/Edges 12.JPG", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 12, category: "Theatre", type: "image", src: "/theatre/Edges 13.JPG", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 13, category: "Theatre", type: "image", src: "/theatre/Edges 14.JPG", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 14, category: "Theatre", type: "image", src: "/theatre/Edges 17.JPG", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 15, category: "Theatre", type: "image", src: "/theatre/image-34.JPG", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 16, category: "Theatre", type: "image", src: "/theatre/image-35.JPG", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 17, category: "Theatre", type: "image", src: "/theatre/image-63.jpg", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 18, category: "Theatre", type: "image", src: "/theatre/image-64.jpg", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 19, category: "Theatre", type: "image", src: "/theatre/image-65.jpg", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 20, category: "Theatre", type: "image", src: "/theatre/image-95.jpg", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 21, category: "Theatre", type: "image", src: "/theatre/image-157.jpg", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 22, category: "Theatre", type: "image", src: "/theatre/image-159.jpg", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 23, category: "Theatre", type: "image", src: "/theatre/image-182.jpg", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 24, category: "Theatre", type: "image", src: "/theatre/image-183.jpg", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 25, category: "Theatre", type: "image", src: "/theatre/image-185.jpg", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 26, category: "Theatre", type: "image", src: "/theatre/image-209.jpg", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 27, category: "Theatre", type: "image", src: "/theatre/image-212.jpg", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 28, category: "Theatre", type: "image", src: "/theatre/Matilda 2.jpeg", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 29, category: "Theatre", type: "image", src: "/theatre/Matilda 3.jpeg", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 30, category: "Theatre", type: "image", src: "/theatre/Peter 2.JPG", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 31, category: "Theatre", type: "image", src: "/theatre/Peter 3.JPG", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 32, category: "Theatre", type: "image", src: "/theatre/Peter 4.JPG", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 33, category: "Theatre", type: "image", src: "/theatre/Peter 5.JPG", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 34, category: "Theatre", type: "image", src: "/theatre/Peter 6.JPG", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 35, category: "Theatre", type: "image", src: "/theatre/Peter 7.JPG", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 36, category: "Theatre", type: "image", src: "/theatre/Peter 8.JPG", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 37, category: "Theatre", type: "image", src: "/theatre/Peter 9.JPG", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 38, category: "Theatre", type: "image", src: "/theatre/Peter 11.JPG", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 39, category: "Theatre", type: "image", src: "/theatre/Pippin 1.jpg", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 40, category: "Theatre", type: "image", src: "/theatre/Pippin 3.jpg", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 41, category: "Theatre", type: "image", src: "/theatre/Pippin 5.JPG", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 42, category: "Theatre", type: "image", src: "/theatre/Pippin 22.JPG", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 43, category: "Theatre", type: "image", src: "/theatre/Pippin 25.JPG", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 44, category: "Theatre", type: "image", src: "/theatre/Seaussical 4.jpeg", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 45, category: "Theatre", type: "image", src: "/theatre/Seussical.jpeg", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 46, category: "Theatre", type: "image", src: "/theatre/Seaussical 3.jpeg", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 47, category: "Theatre", type: "image", src: "/theatre/Seussical 2.jpeg", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 48, category: "Theatre", type: "image", src: "/theatre/Fringe 1.JPG", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 49, category: "Theatre", type: "image", src: "/theatre/Sondheim Project 2.jpeg", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 50, category: "Theatre", type: "image", src: "/theatre/Sondheim Project 6.jpeg", alt: "head4", credit: "Marrisa Sattimi" },
+
+
+  { id: 1, category: "Singing", type: "image", src: "/singing/Candid Cabaret 1.JPG", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 2, category: "Singing", type: "image", src: "/singing/Candid Cabaret 3.JPG", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 3, category: "Singing", type: "image", src: "/singing/Candid Cabaret 6.JPG", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 4, category: "Singing", type: "image", src: "/singing/Candid Cabaret 10.JPG", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 5, category: "Singing", type: "image", src: "/singing/Candid Cabaret 12.JPG", alt: "head4", credit: "Marrisa Sattimi" },
+  { id: 6, category: "Singing", type: "image", src: "/singing/sing2.JPG", alt: "head4", credit: "Marrisa Sattimi"},
+  { id: 7, category: "Singing", type: "image", src: "/singing/sing3.JPG", alt: "head4", credit: "Marrisa Sattimi" },
 
   { id: 1, category: "Showreels", type: "video", src: "https://www.youtube.com/embed/LGwIA9g910Y", alt: "Acting Reel" },
   { id: 2, category: "Showreels", type: "video", src: "https://youtube.com/embed/Xk8VB32uNgw", alt: "Vocal Reel" },
+  
 
 ]
 
@@ -393,26 +398,13 @@ return (
           </Button>
         </div>
 
-        {/* Side chevrons (optional; keep if you like) */}
-        <div className="absolute left-4 top-1/2 -translate-y-1/2 z-[10000] pointer-events-auto">
-          <Button variant="ghost" size="icon" className="text-white hover:bg-white/10" onClick={prev} aria-label="Previous">
-            <ChevronLeft className="h-7 w-7" />
-          </Button>
-        </div>
-
-        <div className="absolute right-4 top-1/2 -translate-y-1/2 z-[10000] pointer-events-auto">
-          <Button variant="ghost" size="icon" className="text-white hover:bg-white/10" onClick={next} aria-label="Next">
-            <ChevronRight className="h-7 w-7" />
-          </Button>
-        </div>
-
         {/* Content */}
-        <div className="relative z-[9999] h-full w-full flex items-center justify-center pt-22 p-4 pointer-events-none">
+        <div className="absolute z-[9999] h-[80%] w-full flex items-center justify-center pt-10 p-4 pointer-events-none">
           {current.type === "image" ? (
             <img
               src={current.src || "/placeholder.svg"}
               alt={current.alt}
-              className="max-w-full max-h-full object-contain select-none pointer-events-auto"
+              className="max-w-full max-h-full object-contain select-none pointer-events-auto p-10"
               draggable={false}
               onClick={(e) => e.stopPropagation()}
             />
@@ -434,6 +426,16 @@ return (
             </div>
           )}
         </div>
+        {/* Credit (bottom) */}
+        {current.credit && (
+          <div className="pointer-events-auto absolute bottom-4 left-1/2 -translate-x-1/2 max-w-[min(92vw,900px)]">
+            <div className="rounded-full border border-white/10 bg-black/50 backdrop-blur px-4 py-2 text-center">
+              <p className="text-xs md:text-sm text-white/85">
+                {current.credit}
+              </p>
+            </div>
+          </div>
+        )}
       </div>
     )}
   </main>

@@ -4,6 +4,7 @@ import { useMemo, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import { sendContact } from "@/lib/sendContact"
 
 type FormState = "idle" | "sending" | "success" | "error"
 
@@ -17,7 +18,8 @@ export function UseContactPage() {
   const [email, setEmail] = useState("")
   const [subject, setSubject] = useState("")
   const [message, setMessage] = useState("")
-  const [error, setError] = useState<string | null>(null)
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [error, setError] = useState<string | null>(null);
 
   const canSubmit = useMemo(() => {
     if (state === "sending") return false
@@ -27,36 +29,31 @@ export function UseContactPage() {
     return true
   }, [name, email, message, state])
 
+  const ts = useMemo(() => Date.now(), []);
+
   async function onSubmit(e: React.FormEvent) {
-    e.preventDefault()
-    setError(null)
-    setState("sending")
+    e.preventDefault();
+    setError(null);
+    setState("sending");
 
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: name.trim(),
-          email: email.trim(),
-          subject: subject.trim(),
-          message: message.trim(),
-        }),
-      })
+      await sendContact({
+        name: name.trim(),
+        email: email.trim(),
+        subject: subject.trim(),
+        message: message.trim(),
+        ts,
+        company_website: "", // honeypot (optional)
+      });
 
-      if (!res.ok) {
-        const data = await res.json().catch(() => null)
-        throw new Error(data?.error ?? "Failed to send message.")
-      }
-
-      setState("success")
-      setName("")
-      setEmail("")
-      setSubject("")
-      setMessage("")
+      setState("success");
+      setName("");
+      setEmail("");
+      setSubject("");
+      setMessage("");
     } catch (err: any) {
-      setState("error")
-      setError(err?.message ?? "Something went wrong.")
+      setState("error");
+      setError(err?.message ?? "Something went wrong.");
     }
   }
 
@@ -163,7 +160,12 @@ export function UseContactPage() {
                     <Button type="submit" disabled={!canSubmit} className="min-w-[160px]">
                       {state === "sending" ? "Sending…" : "Send Message"}
                     </Button>
-
+                    {status === "sent" && (
+                      <p className="mt-3 text-sm text-green-600">Thanks — your message was sent!</p>
+                    )}
+                    {status === "error" && (
+                      <p className="mt-3 text-sm text-red-600">{error ?? "Failed to send."}</p>
+                    )}
                     <a
                       href="mailto:taylorfrisina@gmail.com"
                       className="text-sm text-muted-foreground hover:text-foreground transition-colors"
